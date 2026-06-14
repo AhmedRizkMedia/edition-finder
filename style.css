@@ -926,6 +926,10 @@ strong {
   letter-spacing: -0.02em;
 }
 
+.deliv-card-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
 }
 
 /* --- 6.5. Preview Your Business Blueprint Section --- */
