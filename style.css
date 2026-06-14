@@ -471,132 +471,259 @@ strong {
   padding: 1.5rem;
 }
 
-.grid-blueprint-preview {
-  display: grid;
-  grid-template-rows: auto auto;
-  gap: 1.25rem;
+/* --- Business Health Dashboard (Hero Visual) --- */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.blueprint-item {
-  background-color: var(--bg-secondary);
+.dashboard-top-row {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 1rem;
+}
+
+@media (max-width: 500px) {
+  .dashboard-top-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dashboard-panel {
+  background-color: var(--bg-primary);
   border: 1px solid var(--border-secondary);
   border-radius: var(--radius-sm);
   padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
 }
 
-.card-item-title {
-  font-family: var(--font-family);
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-secondary);
-  margin-bottom: 1rem;
-  display: flex;
-  justify-content: space-between;
+.panel-overall {
   align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-color: var(--border-primary);
 }
 
-.badge-success {
-  background-color: rgba(0, 102, 204, 0.08);
-  color: var(--accent-blue);
-  border: 1px solid rgba(0, 102, 204, 0.15);
-  font-size: 0.75rem;
-  padding: 0.2rem 0.6rem;
-  border-radius: 100px;
-}
-
-/* SVG Chart Specific Styles */
-.svg-chart-container {
-  margin: 1rem 0;
-  background-color: #ffffff;
-  border-radius: 4px;
-  padding: 0.5rem;
-  border: 1px solid var(--border-secondary);
-}
-
-.chart-svg {
-  display: block;
-  overflow: visible;
-}
-
-.chart-stats {
-  display: flex;
-  justify-content: space-between;
-  border-top: 1px solid var(--border-secondary);
-  padding-top: 0.8rem;
-  margin-top: 0.5rem;
-}
-
-.chart-stats .label {
-  font-size: 0.7rem;
-  color: var(--text-muted);
-  display: block;
-  text-transform: uppercase;
-  margin-bottom: 0.2rem;
-}
-
-.chart-stats .val {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--text-secondary);
-}
-
-.chart-stats .val.highlight {
-  color: var(--text-white);
+.panel-overall .panel-tag {
+  font-size: 0.65rem;
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+  display: block;
 }
 
-.pulse-dot-svg {
-  animation: pulse-dot-anim 2s infinite;
-  transform-origin: center;
+.panel-overall .panel-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+  font-family: var(--font-family);
 }
 
-@keyframes pulse-dot-anim {
-  0% { r: 4; opacity: 1; }
-  50% { r: 8; opacity: 0.6; }
-  100% { r: 4; opacity: 1; }
-}
-
-.anim-path {
-  stroke-dasharray: 400;
-  stroke-dashoffset: 400;
-  animation: draw-chart 3s cubic-bezier(0.4, 0, 0.2, 1) forwards infinite;
-}
-
-@keyframes draw-chart {
-  0% { stroke-dashoffset: 400; }
-  50% { stroke-dashoffset: 0; }
-  100% { stroke-dashoffset: 0; }
-}
-
-/* Blueprint Checklist styles */
-.blueprint-list-checks {
-  list-style: none;
-}
-
-.blueprint-item-check {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.8rem;
+.large-gauge-container {
+  width: 110px;
+  height: 110px;
   margin-bottom: 0.75rem;
-}
-
-.blueprint-item-check:last-child {
-  margin-bottom: 0;
-}
-
-.blueprint-item-check .icon {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.dashboard-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+@media (max-width: 500px) {
+  .dashboard-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.panel-metric {
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: var(--bg-secondary);
+  flex-direction: column;
+}
+
+.metric-label {
+  font-family: var(--font-family);
   font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  text-align: center;
+  display: block;
+}
+
+.metric-gauge-wrapper {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Gauge SVG Styling */
+.circular-chart {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.circle-bg {
+  stroke: var(--border-secondary);
+}
+
+.panel-overall .circle-bg {
+  stroke: var(--border-primary);
+}
+
+.circle {
+  stroke: var(--text-white);
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  transition: stroke-dashoffset 2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gauge-overall-fill { animation: fill-overall 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.gauge-health-fill { animation: fill-health 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.gauge-web-fill { animation: fill-web 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.gauge-trust-fill { animation: fill-trust 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.gauge-growth-fill { animation: fill-growth 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+@keyframes fill-overall { to { stroke-dashoffset: 22; } } /* 78% */
+@keyframes fill-health { to { stroke-dashoffset: 18; } } /* 82% */
+@keyframes fill-web { to { stroke-dashoffset: 26; } } /* 74% */
+@keyframes fill-trust { to { stroke-dashoffset: 12; } } /* 88% */
+@keyframes fill-growth { to { stroke-dashoffset: 9; } } /* 91% */
+
+.percentage-value {
+  fill: var(--text-white);
+}
+
+.percentage-label {
+  fill: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.percentage {
+  fill: var(--text-white);
+}
+
+.overall-status-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-top: 0.25rem;
+}
+
+.status-indicator-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: block;
+}
+
+.status-indicator-dot.green {
+  background-color: var(--success-color);
+  box-shadow: 0 0 8px var(--success-color);
+}
+
+/* Bottom Row */
+.dashboard-bottom-row {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 1rem;
+}
+
+@media (max-width: 500px) {
+  .dashboard-bottom-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.panel-automation {
+  justify-content: center;
+  padding: 1.25rem;
+  background-color: var(--bg-secondary);
+}
+
+.automation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.automation-header .metric-label {
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.automation-val {
+  font-family: var(--font-family);
+  font-size: 0.9rem;
   font-weight: 700;
-  flex-shrink: 0;
-  margin-top: 2px;
+  color: var(--text-white);
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 6px;
+  background-color: var(--border-primary);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: var(--text-white);
+  border-radius: 100px;
+  animation: fill-bar 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fill-bar {
+  from { width: 0; }
+}
+
+.panel-trend {
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-color: var(--border-primary);
+}
+
+.trend-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+
+.trend-header .metric-label {
+  margin-bottom: 0;
+}
+
+.trend-chart-container {
+  width: 100%;
+  height: 45px;
+}
+
+.trend-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .blueprint-item-check.warning .icon {
@@ -624,38 +751,148 @@ strong {
   margin-top: 0.1rem;
 }
 
-/* --- 3. Trust Bar --- */
-.section-trust-bar {
-  padding: 3.5rem 0;
+/* --- 3. Trusted Business Experience --- */
+.section-experience {
+  padding: 6.5rem 0;
   background-color: var(--bg-secondary);
   border-top: 1px solid var(--border-primary);
   border-bottom: 1px solid var(--border-primary);
 }
 
-.trust-bar-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 2rem;
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
 }
 
-.trust-item {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
+@media (max-width: 991px) {
+  .experience-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
 }
 
-.trust-item .trust-icon {
+@media (max-width: 600px) {
+  .experience-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.experience-card {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-secondary);
+  border-radius: var(--radius-md);
+  padding: 3rem 2.2rem;
+  transition: all var(--transition-medium);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--border-primary);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+}
+
+.exp-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.75rem;
   color: var(--text-white);
-  font-weight: 700;
 }
 
-.trust-item .trust-label {
+.exp-stat {
   font-family: var(--font-family);
-  font-size: 0.9rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.exp-desc {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+/* --- Trust Pill above Pricing --- */
+.pricing-trust-statement {
+  text-align: center;
+  margin-bottom: 3.5rem;
+  margin-top: -1.5rem;
+}
+
+.pricing-trust-inner {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-secondary);
+  border-radius: 100px;
+  padding: 0.6rem 1.5rem;
+  font-weight: 500;
+}
+
+.trust-highlight {
+  color: var(--text-white);
   font-weight: 600;
-  color: var(--text-primary);
+}
+
+.trust-divider-dot {
+  color: var(--border-primary);
+  margin: 0 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .pricing-trust-inner {
+    border-radius: var(--radius-sm);
+    padding: 1rem;
+    display: block;
+    text-align: center;
+  }
+  .trust-divider-dot {
+    display: none;
+  }
+  .pricing-trust-inner span {
+    display: block;
+    text-align: center;
+  }
+}
+
+/* --- Footer Capabilities --- */
+.footer-capabilities {
+  font-family: var(--font-family);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.footer-capabilities .cap-sep {
+  color: var(--border-primary);
+  margin: 0 0.2rem;
+}
+
+@media (max-width: 768px) {
+  .footer-capabilities {
+    justify-content: center;
+  }
 }
 
 /* --- 4. Why Businesses Stop Growing Section --- */
