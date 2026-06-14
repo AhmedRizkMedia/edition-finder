@@ -926,10 +926,311 @@ strong {
   letter-spacing: -0.02em;
 }
 
-.deliv-card-desc {
-  font-size: 0.9rem;
+}
+
+/* --- 6.5. Preview Your Business Blueprint Section --- */
+.section-preview {
+  padding: 6.5rem 0;
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-secondary);
+  border-bottom: 1px solid var(--border-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+.preview-mockup-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.preview-dashboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.25rem;
+}
+
+.preview-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  padding: 2.75rem;
+  box-shadow: var(--shadow-luxury);
+  transition: transform var(--transition-medium), box-shadow var(--transition-medium), border-color var(--transition-medium);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 380px;
+}
+
+.preview-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.04);
+  border-color: var(--text-muted);
+}
+
+.preview-card.roadmap-card {
+  grid-column: span 2;
+}
+
+.preview-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.preview-badge {
+  font-family: var(--font-family);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background-color: var(--bg-secondary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+  border: 1px solid var(--border-secondary);
+}
+
+.preview-card-title {
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+}
+
+.preview-card-desc {
+  font-size: 0.95rem;
   line-height: 1.6;
   color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.abstract-visual {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-secondary);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.8rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.line-skeleton {
+  height: 8px;
+  background-color: var(--border-primary);
+  border-radius: 4px;
+}
+.line-skeleton.width-80 { width: 80%; }
+.line-skeleton.width-60 { width: 60%; }
+.line-skeleton.width-90 { width: 90%; }
+
+.summary-bullets {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.bullet-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+.dot-green {
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent-blue);
+  border-radius: 50%;
+  box-shadow: 0 0 6px var(--accent-blue);
+}
+
+.health-visual {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1.5rem;
+}
+.health-score-container {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.score-ring {
+  transform: rotate(-90deg);
+  width: 80px;
+  height: 80px;
+}
+.ring-bg {
+  stroke: var(--border-primary);
+}
+.ring-fill {
+  stroke: var(--text-white);
+  transition: stroke-dasharray 1s ease-in-out;
+}
+.health-score-num {
+  position: absolute;
+  font-family: var(--font-family);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-white);
+}
+.health-metrics-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-grow: 1;
+}
+.metric-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  border-bottom: 1px dashed var(--border-primary);
+  padding-bottom: 0.25rem;
+}
+.metric-label {
+  color: var(--text-secondary);
+}
+.metric-val {
+  font-weight: 600;
+  color: var(--text-white);
+}
+
+.growth-visual {
+  align-items: center;
+  justify-content: center;
+}
+.growth-funnel {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  max-width: 180px;
+}
+.funnel-tier {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-primary);
+  border-radius: 4px;
+  padding: 0.4rem;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+.funnel-tier.tier-1 { width: 100%; color: var(--text-white); border-color: var(--text-muted); }
+.funnel-tier.tier-2 { width: 80%; margin: 0 auto; }
+.funnel-tier.tier-3 { width: 60%; margin: 0 auto; background-color: var(--text-white); color: var(--bg-primary); border-color: var(--text-white); }
+
+.competitor-visual {
+  padding: 1rem;
+}
+.comp-matrix {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.matrix-row {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  padding: 0.4rem 0;
+  font-size: 0.75rem;
+  border-bottom: 1px solid var(--border-primary);
+  align-items: center;
+}
+.matrix-row:last-child {
+  border-bottom: none;
+}
+.matrix-row.header-row {
+  font-weight: 700;
+  color: var(--text-white);
+  border-bottom-color: var(--text-muted);
+}
+.matrix-row span {
+  text-align: center;
+}
+.matrix-row span:first-child {
+  text-align: left;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+.circle-empty {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+.circle-fill {
+  color: var(--text-white);
+  font-size: 0.85rem;
+}
+
+.roadmap-visual {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1.5rem 2rem;
+  gap: 1.5rem;
+}
+.roadmap-timeline {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+}
+.roadmap-timeline::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background-image: linear-gradient(90deg, var(--border-primary) 50%, transparent 50%);
+  background-size: 8px 2px;
+  z-index: 1;
+}
+.roadmap-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  position: relative;
+  z-index: 2;
+  flex: 1;
+}
+.step-tag {
+  font-family: var(--font-family);
+  font-size: 0.7rem;
+  font-weight: 600;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-primary);
+  color: var(--text-white);
+  padding: 0.25rem 0.6rem;
+  border-radius: 100px;
+}
+.roadmap-step:last-child .step-tag {
+  background-color: var(--text-white);
+  border-color: var(--text-white);
+  color: var(--bg-primary);
+}
+.step-desc {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  text-align: center;
+}
+
+.preview-personal-note {
+  font-family: var(--font-family);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-top: 4rem;
+  letter-spacing: -0.01em;
 }
 
 /* --- 7. Pricing Section --- */
@@ -2016,6 +2317,15 @@ strong {
     gap: 1rem;
     text-align: center;
   }
+  
+  .preview-dashboard {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .preview-card.roadmap-card {
+    grid-column: span 2;
+  }
 }
 
 @media (max-width: 768px) {
@@ -2102,6 +2412,40 @@ strong {
   }
   .mobile-toggle.active .bar:nth-child(2) {
     transform: translateY(-6px) rotate(-45deg);
+  }
+  
+  .preview-dashboard {
+    grid-template-columns: 1fr;
+  }
+  
+  .preview-card.roadmap-card {
+    grid-column: span 1;
+  }
+  
+  .roadmap-visual {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.5rem;
+  }
+  
+  .roadmap-timeline {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  
+  .roadmap-timeline::before {
+    display: none;
+  }
+  
+  .roadmap-step {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .roadmap-step .step-desc {
+    text-align: left;
   }
 }
 
