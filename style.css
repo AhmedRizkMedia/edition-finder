@@ -3641,9 +3641,9 @@ strong {
   width: 100%;
 }
 .country-code-select {
-  flex: 0 0 110px;
-  width: 110px;
-  padding: 0.8rem 0.5rem;
+  flex: 0 0 135px;
+  width: 135px;
+  padding: 0.8rem 0.4rem;
   background-color: var(--bg-card);
   border: 1px solid var(--border-primary);
   border-radius: var(--radius-md);
