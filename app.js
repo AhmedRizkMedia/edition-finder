@@ -77,28 +77,33 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
   const progressLine = document.getElementById('timeline-progress');
 
-  if (progressLine && steps[0]) {
+  if (steps[0]) {
     const stepObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const stepId = entry.target.id;
-          entry.target.classList.add('active');
           
-          // Update timeline progress percentage
-          if (stepId === 'step-1') {
-            progressLine.style.width = '15%';
-          } else if (stepId === 'step-2') {
-            progressLine.style.width = '45%';
-          } else if (stepId === 'step-3') {
-            progressLine.style.width = '75%';
-          } else if (stepId === 'step-4') {
-            progressLine.style.width = '100%';
+          // Add active class to badge or parent timeline item
+          const stepElement = entry.target.closest('.timeline-step-item') || entry.target;
+          stepElement.classList.add('active');
+          
+          // Update timeline progress percentage if progress line exists
+          if (progressLine) {
+            if (stepId === 'step-1') {
+              progressLine.style.width = '15%';
+            } else if (stepId === 'step-2') {
+              progressLine.style.width = '45%';
+            } else if (stepId === 'step-3') {
+              progressLine.style.width = '75%';
+            } else if (stepId === 'step-4') {
+              progressLine.style.width = '100%';
+            }
           }
         }
       });
     }, {
-      threshold: 0.6,
-      rootMargin: '0px 0px -100px 0px'
+      threshold: 0.5,
+      rootMargin: '0px 0px -50px 0px'
     });
 
     steps.forEach(step => {

@@ -3438,4 +3438,117 @@ strong {
   font-size: 1.25rem;
 }
 
+/* --- Split Process & Why Us Layout --- */
+.why-process-split {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 5rem;
+  margin-top: 2rem;
+}
+.vertical-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  padding-left: 0.5rem;
+  margin-top: 1rem;
+}
+.vertical-timeline::before {
+  content: "";
+  position: absolute;
+  left: 1.5rem;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 1px;
+  background-color: var(--border-primary);
+}
+.timeline-step-item {
+  display: flex;
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+}
+.timeline-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-white);
+  flex-shrink: 0;
+  transition: all var(--transition-medium);
+}
+.timeline-step-item:hover .timeline-badge {
+  background-color: var(--text-white);
+  color: var(--bg-primary);
+  border-color: var(--text-white);
+}
+.timeline-step-content {
+  flex-grow: 1;
+}
+.timeline-step-title {
+  font-family: var(--font-family);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 0.5rem;
+}
+.timeline-step-text {
+  font-family: var(--font-family-sans);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+.stats-compact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
 
+/* Responsive Overrides */
+@media (max-width: 1024px) {
+  .why-process-split {
+    grid-template-columns: 1fr;
+    gap: 4.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .stats-compact-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .vertical-timeline::before {
+    left: 1rem;
+  }
+  .timeline-badge {
+    width: 28px;
+    height: 28px;
+    font-size: 0.85rem;
+  }
+  .timeline-step-item {
+    gap: 1.25rem;
+  }
+}
+
+/* Vertical Timeline Active Highlight States */
+.timeline-step-item .timeline-step-title,
+.timeline-step-item .timeline-step-text {
+  transition: color var(--transition-medium) ease;
+}
+.timeline-step-item.active .timeline-badge {
+  background-color: var(--text-white);
+  color: var(--bg-primary);
+  border-color: var(--text-white);
+}
+.timeline-step-item.active .timeline-step-title {
+  color: var(--text-white);
+}
+.timeline-step-item.active .timeline-step-text {
+  color: var(--text-secondary);
+}
