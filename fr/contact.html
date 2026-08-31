@@ -14,7 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="../style.css?v=11.0">
+  <link rel="stylesheet" href="../style.css?v=12.0">
 </head>
 <body>
 
@@ -91,7 +91,27 @@
                 <!-- Phone / WhatsApp -->
                 <div class="form-group">
                   <label for="phone">Téléphone / WhatsApp <span class="required">*</span></label>
-                  <input type="text" id="phone" name="phone" placeholder="+971 50 123 4567" required>
+                  <div class="phone-input-container">
+                    <select id="countryCode" name="countryCode" class="country-code-select">
+                      <option value="+971">🇦🇪 +971</option>
+                      <option value="+966">🇸🇦 +966</option>
+                      <option value="+965">🇰🇼 +965</option>
+                      <option value="+968">🇴🇲 +968</option>
+                      <option value="+973">🇧🇭 +973</option>
+                      <option value="+974">🇶🇦 +974</option>
+                      <option value="+20">🇪🇬 +20</option>
+                      <option value="+1">🇺🇸 +1</option>
+                      <option value="+44">🇬🇧 +44</option>
+                      <option value="+33">🇫🇷 +33</option>
+                      <option value="+49">🇩🇪 +49</option>
+                      <option value="+961">🇱🇧 +961</option>
+                      <option value="+962">🇯🇴 +962</option>
+                      <option value="+212">🇲🇦 +212</option>
+                      <option value="+213">🇩🇿 +213</option>
+                      <option value="+216">🇹🇳 +216</option>
+                    </select>
+                    <input type="tel" id="phone" name="phone" placeholder="50 123 4567" required>
+                  </div>
                   <span class="error-msg" id="err-phone">Veuillez entrer votre numéro de téléphone ou WhatsApp.</span>
                 </div>
 

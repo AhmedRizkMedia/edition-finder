@@ -3633,6 +3633,40 @@ strong {
   }
 }
 
+/* --- Phone Input with Country Code Selector --- */
+.phone-input-container {
+  display: flex;
+  align-items: stretch;
+  gap: 0.5rem;
+  width: 100%;
+}
+.country-code-select {
+  flex: 0 0 110px;
+  width: 110px;
+  padding: 0.8rem 0.5rem;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  color: var(--text-white);
+  font-family: var(--font-family);
+  font-size: 0.95rem;
+  cursor: pointer;
+  outline: none;
+  transition: border-color var(--transition-fast) ease, box-shadow var(--transition-fast) ease;
+}
+.country-code-select option {
+  background-color: var(--bg-card);
+  color: var(--text-white);
+}
+.country-code-select:focus {
+  border-color: var(--text-white);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+.phone-input-container input[type="tel"] {
+  flex: 1;
+  margin-top: 0 !important;
+}
+
 /* --- RTL Support (Arabic) --- */
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap');
 
