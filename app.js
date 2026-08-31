@@ -66,15 +66,14 @@ document.addEventListener('DOMContentLoaded', () => {
     revealOnScrollObserver.observe(el);
   });
 
-
-
   // ==========================================
-  // 4. How It Works Timeline Progress
+  // 4. How It Works Timeline Progress (4 Steps)
   // ==========================================
   const steps = [
     document.getElementById('step-1'),
     document.getElementById('step-2'),
-    document.getElementById('step-3')
+    document.getElementById('step-3'),
+    document.getElementById('step-4')
   ];
   const progressLine = document.getElementById('timeline-progress');
 
@@ -89,8 +88,10 @@ document.addEventListener('DOMContentLoaded', () => {
           if (stepId === 'step-1') {
             progressLine.style.width = '15%';
           } else if (stepId === 'step-2') {
-            progressLine.style.width = '50%';
+            progressLine.style.width = '45%';
           } else if (stepId === 'step-3') {
+            progressLine.style.width = '75%';
+          } else if (stepId === 'step-4') {
             progressLine.style.width = '100%';
           }
         }
@@ -106,79 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================
-  // 5. Packages Selection and Pre-select Form
-  // ==========================================
-  const packageSelect = document.getElementById('packageSelect');
-  const packageButtons = document.querySelectorAll('[data-package]');
-
-  packageButtons.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      const selectedPackageName = btn.getAttribute('data-package');
-      if (packageSelect && selectedPackageName) {
-        // Find matching option value
-        let matchValue = "";
-        if (selectedPackageName.includes("One")) {
-          matchValue = "Edition One — $149";
-        } else if (selectedPackageName.includes("Plus")) {
-          matchValue = "Edition Plus — $299";
-        } else if (selectedPackageName.includes("Elite")) {
-          matchValue = "Edition Elite — $499";
-        }
-
-        if (matchValue) {
-          packageSelect.value = matchValue;
-          // Trigger style removal for invalid fields if they selected one
-          const parentFormGroup = packageSelect.closest('.form-group');
-          if (parentFormGroup) {
-            parentFormGroup.classList.remove('invalid');
-          }
-        }
-      }
-    });
-  });
-
-  // ==========================================
-  // 6. FAQ Accordion Panels
-  // ==========================================
-  const faqItems = document.querySelectorAll('.faq-item');
-
-  faqItems.forEach(item => {
-    const trigger = item.querySelector('.faq-trigger');
-    const panel = item.querySelector('.faq-panel');
-
-    if (trigger && panel) {
-      trigger.addEventListener('click', () => {
-        const isActive = item.classList.contains('active');
-
-        // Close all other FAQ items first
-        faqItems.forEach(otherItem => {
-          if (otherItem !== item) {
-            otherItem.classList.remove('active');
-            const otherTrigger = otherItem.querySelector('.faq-trigger');
-            const otherPanel = otherItem.querySelector('.faq-panel');
-            if (otherTrigger && otherPanel) {
-              otherTrigger.setAttribute('aria-expanded', 'false');
-              otherPanel.style.maxHeight = null;
-            }
-          }
-        });
-
-        // Toggle current item
-        if (isActive) {
-          item.classList.remove('active');
-          trigger.setAttribute('aria-expanded', 'false');
-          panel.style.maxHeight = null;
-        } else {
-          item.classList.add('active');
-          trigger.setAttribute('aria-expanded', 'true');
-          panel.style.maxHeight = panel.scrollHeight + 'px';
-        }
-      });
-    }
-  });
-
-  // ==========================================
-  // 7. Form Validation and Submission (Success UI Transition)
+  // 5. Form Validation and Submission (Success UI Transition)
   // ==========================================
   const form = document.getElementById('blueprint-form');
   const formCardWrapper = document.getElementById('form-card-wrapper');
@@ -187,8 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const submitBtn = document.getElementById('submit-btn');
   const btnText = submitBtn ? submitBtn.querySelector('.btn-text') : null;
   const spinner = submitBtn ? submitBtn.querySelector('.loader-spinner') : null;
-  const successUserEmail = document.getElementById('success-user-email');
-  const successPackageCost = document.getElementById('success-package-cost');
   const resetFormBtn = document.getElementById('btn-reset-form');
 
   if (form && formStateActive && formStateSuccess) {
@@ -208,61 +135,26 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (input.type === 'email' && !validateEmail(input.value)) {
           formGroup.classList.add('invalid');
           isFormValid = false;
-        } else if (input.type === 'url' && !validateUrl(input.value)) {
-          formGroup.classList.add('invalid');
-          isFormValid = false;
         } else {
           formGroup.classList.remove('invalid');
         }
       });
 
-      // Validate optional website URL if it has a value
-      const websiteInput = document.getElementById('website');
-      if (websiteInput) {
-        const wGroup = websiteInput.closest('.form-group');
-        const webVal = websiteInput.value.trim();
-        if (webVal !== "" && !validateUrl(webVal)) {
-          wGroup.classList.add('invalid');
-          isFormValid = false;
-        } else {
-          wGroup.classList.remove('invalid');
-        }
-      }
-
-      // Handle package select validation explicitly
-      if (packageSelect) {
-        const pGroup = packageSelect.closest('.form-group');
-        if (packageSelect.value === "") {
-          pGroup.classList.add('invalid');
-          isFormValid = false;
-        } else {
-          pGroup.classList.remove('invalid');
-        }
-      }
-
       if (isFormValid) {
         // Trigger submitting state
         if (submitBtn) submitBtn.disabled = true;
-        if (btnText) btnText.textContent = 'Analyzing Business Profile...';
+        if (btnText) btnText.textContent = 'Sending message...';
         if (spinner) spinner.style.display = 'inline-block';
-
-        // Read field values
-        const emailVal = document.getElementById('email').value.trim();
-        const packageVal = packageSelect ? packageSelect.value : 'Edition Plus — $299';
 
         // Simulate 1.5 second strategic diagnostic scanning latency
         setTimeout(() => {
-          // Update Success UI fields
-          if (successUserEmail) successUserEmail.textContent = emailVal;
-          if (successPackageCost) successPackageCost.textContent = packageVal;
-
           // Transition panels
           formStateActive.style.display = 'none';
           formStateSuccess.style.display = 'block';
 
           // Reset loader state for button
           if (submitBtn) submitBtn.disabled = false;
-          if (btnText) btnText.textContent = 'Request My Business Blueprint';
+          if (btnText) btnText.textContent = "LET'S TALK";
           if (spinner) spinner.style.display = 'none';
 
           // Scroll wrapper to top of the success card container smoothly
@@ -281,16 +173,21 @@ document.addEventListener('DOMContentLoaded', () => {
       element.addEventListener('input', () => {
         const group = element.closest('.form-group');
         if (group && group.classList.contains('invalid')) {
-          if (element.id === 'website') {
-            // Website is optional, clear error if empty or if it becomes valid
-            if (element.value.trim() === '' || validateUrl(element.value.trim())) {
-              group.classList.remove('invalid');
-            }
-          } else if (element.value.trim() !== '') {
+          if (element.value.trim() !== '') {
             group.classList.remove('invalid');
           }
         }
       });
+      
+      // Select fields change listener
+      if (element.tagName === 'SELECT') {
+        element.addEventListener('change', () => {
+          const group = element.closest('.form-group');
+          if (group && group.classList.contains('invalid') && element.value !== '') {
+            group.classList.remove('invalid');
+          }
+        });
+      }
     });
 
     // Success State Reset Button
@@ -308,43 +205,5 @@ document.addEventListener('DOMContentLoaded', () => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(String(email).toLowerCase());
   }
-
-  // URL helper validator
-  function validateUrl(url) {
-    try {
-      new URL(url);
-      return true;
-    } catch (_) {
-      const re = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([\/\w .-]*)*\/?$/;
-      return re.test(url);
-    }
-  }
-
-  // ==========================================
-  // 8. Copy Payment Details Utility
-  // ==========================================
-  const copyButtons = document.querySelectorAll('.btn-copy');
-
-  copyButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const copyVal = btn.getAttribute('data-copy');
-      if (copyVal) {
-        navigator.clipboard.writeText(copyVal).then(() => {
-          // Success Feedback
-          const originalText = btn.textContent;
-          btn.textContent = 'Copied!';
-          btn.classList.add('copied');
-
-          // Reset feedback after delay
-          setTimeout(() => {
-            btn.textContent = originalText;
-            btn.classList.remove('copied');
-          }, 2000);
-        }).catch(err => {
-          console.error('Failed to copy text: ', err);
-        });
-      }
-    });
-  });
 
 });

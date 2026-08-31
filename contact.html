@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get in Touch — Edition Finder</title>
+  <meta name="description" content="Start a conversation with Edition Finder today. Request your free business consultation and review your marketing, branding, web, and growth systems.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://editionfinder.com/contact.html">
+  
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css?v=5.0">
+</head>
+<body>
+
+  <!-- Sticky Navigation Bar -->
+  <header class="header">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo" id="brand-logo">
+        <span class="logo-dot"></span>
+        Edition Finder
+      </a>
+      
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html#why-stop" class="nav-link">Why Growing Stops</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="index.html#difference" class="nav-link">Why Us</a>
+        <a href="index.html#process" class="nav-link">Process</a>
+        <a href="#" class="nav-link active">Get in Touch</a>
+      </nav>
+      
+      <div class="header-cta">
+        <a href="#" class="btn btn-secondary btn-sm">Book Free Consultation</a>
+      </div>
+
+      <!-- Mobile Toggle Button -->
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Contact Header / Spacer Section -->
+    <section class="section-subpage-header" style="padding-bottom: 2rem;">
+      <div class="hero-bg-lines"></div>
+      <div class="container">
+        <div class="subpage-header-content fade-in-up" style="max-width: 700px; margin: 0 auto; text-align: center;">
+          <span class="section-tag">Let's Talk</span>
+          <h1 class="subpage-title">Start a Conversation</h1>
+          <p class="subpage-desc">Complete the fields below to schedule your free business consultation. Our team will review your presence and reach out within 24 hours.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Consultation Form Section -->
+    <section class="section-form" id="form-section" style="padding-top: 1rem;">
+      <div class="container form-max-container">
+        <div class="form-card-wrapper fade-in-up" id="form-card-wrapper">
+          
+          <!-- State 1: Active Form -->
+          <div class="form-state-active" id="form-state-active">
+            <form id="blueprint-form" class="blueprint-form" novalidate>
+              <div class="form-grid">
+                <!-- Full Name -->
+                <div class="form-group">
+                  <label for="fullName">Full Name <span class="required">*</span></label>
+                  <input type="text" id="fullName" name="fullName" placeholder="Ahmed Rizk" required>
+                  <span class="error-msg" id="err-fullName">Please enter your name.</span>
+                </div>
+
+                <!-- Company Name -->
+                <div class="form-group">
+                  <label for="companyName">Company / Business Name <span class="required">*</span></label>
+                  <input type="text" id="companyName" name="companyName" placeholder="Edition Finder Inc." required>
+                  <span class="error-msg" id="err-companyName">Please enter your company name.</span>
+                </div>
+
+                <!-- Phone / WhatsApp -->
+                <div class="form-group">
+                  <label for="phone">Phone / WhatsApp <span class="required">*</span></label>
+                  <input type="text" id="phone" name="phone" placeholder="+971 50 123 4567" required>
+                  <span class="error-msg" id="err-phone">Please enter your phone or WhatsApp number.</span>
+                </div>
+
+                <!-- Business Email -->
+                <div class="form-group">
+                  <label for="email">Business Email <span class="required">*</span></label>
+                  <input type="email" id="email" name="email" placeholder="ahmed@editionfinder.com" required>
+                  <span class="error-msg" id="err-email">Please enter a valid business email.</span>
+                </div>
+
+                <!-- Dropdown: What brings you here? -->
+                <div class="form-group span-full">
+                  <label for="bringsHere">What brings you here? <span class="required">*</span></label>
+                  <select id="bringsHere" name="bringsHere" required>
+                    <option value="" disabled selected>Select an option...</option>
+                    <option value="I'm starting a business">I'm starting a business</option>
+                    <option value="I want more customers">I want more customers</option>
+                    <option value="My marketing isn't working">My marketing isn't working</option>
+                    <option value="I need branding or creative">I need branding or creative</option>
+                    <option value="I need media/content production">I need media/content production</option>
+                    <option value="I'm planning an event">I'm planning an event</option>
+                    <option value="I need a website/digital solution">I need a website/digital solution</option>
+                    <option value="I want to improve or automate my business">I want to improve or automate my business</option>
+                    <option value="I have a specific project">I have a specific project</option>
+                    <option value="I'm not sure — I need guidance">I'm not sure — I need guidance</option>
+                  </select>
+                  <span class="error-msg" id="err-bringsHere">Please choose what brings you here.</span>
+                </div>
+
+                <!-- Describe what's on mind -->
+                <div class="form-group span-full">
+                  <label for="businessDescription">Tell us what's on your mind <span class="required">*</span></label>
+                  <textarea id="businessDescription" name="businessDescription" rows="4" placeholder="Briefly describe your current situation, business challenges, or what you would like to achieve." required></textarea>
+                  <span class="error-msg" id="err-businessDescription">Please enter what's on your mind.</span>
+                </div>
+
+                <!-- Preferred contact method (Optional) -->
+                <div class="form-group">
+                  <label for="contactMethod">Preferred contact method <span class="optional">(Optional)</span></label>
+                  <select id="contactMethod" name="contactMethod">
+                    <option value="" selected>No preference</option>
+                    <option value="WhatsApp">WhatsApp</option>
+                    <option value="Email">Email</option>
+                    <option value="Phone Call">Phone Call</option>
+                  </select>
+                </div>
+
+                <!-- Best time to reach (Optional) -->
+                <div class="form-group">
+                  <label for="bestTime">Best time to reach you <span class="optional">(Optional)</span></label>
+                  <select id="bestTime" name="bestTime">
+                    <option value="" selected>No preference</option>
+                    <option value="Morning (9 AM - 12 PM)">Morning (9 AM - 12 PM)</option>
+                    <option value="Afternoon (12 PM - 5 PM)">Afternoon (12 PM - 5 PM)</option>
+                    <option value="Evening (5 PM - 8 PM)">Evening (5 PM - 8 PM)</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Reassurance / Trust Info note -->
+              <div class="payment-note-box">
+                <svg class="note-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2"/>
+                  <path d="M12 16V12M12 8H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <p class="payment-note-text">
+                  Your first business consultation is 100% free with no commitment or obligation.
+                </p>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn btn-primary btn-lg btn-full" id="submit-btn">
+                <span class="btn-text">LET'S TALK</span>
+                <span class="loader-spinner" style="display: none;"></span>
+              </button>
+            </form>
+          </div>
+
+          <!-- State 2: Success Confirmation (Hidden Initially) -->
+          <div class="form-state-success" id="form-state-success" style="display: none;">
+            <div class="success-header" style="max-width: 600px; margin: 0 auto; text-align: center;">
+              <div class="success-icon-wrapper" style="margin-bottom: 2.5rem;">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" class="success-checkmark">
+                  <path d="M20 6L9 17L4 12" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h2 class="form-title" style="margin-bottom: 1.5rem;">Thank you.</h2>
+              <p class="form-subtitle" style="font-size: 1.15rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 3rem;">
+                We’ve received your message. We will review what is happening inside your business and contact you within 24 hours to schedule your free consultation.
+              </p>
+              <button class="btn btn-secondary btn-full btn-lg" id="btn-reset-form">Submit Another Message</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Premium Footer Section -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <a href="index.html" class="brand-logo">
+          <span class="logo-dot"></span>
+          Edition Finder
+        </a>
+        <p class="footer-slogan">Helping businesses discover their next edition.</p>
+        <div class="footer-capabilities">
+          <span>Business Strategy</span>
+          <span class="cap-sep">•</span>
+          <span>Business Blueprints</span>
+          <span class="cap-sep">•</span>
+          <span>AI Growth Systems</span>
+          <span class="cap-sep">•</span>
+          <span>Worldwide Consulting</span>
+        </div>
+      </div>
+      
+      <div class="footer-links-group">
+        <div class="footer-col">
+          <span class="col-title">Solutions</span>
+          <a href="index.html#why-stop">Why Growing Stops</a>
+          <a href="services.html">Services Details</a>
+          <a href="index.html#difference">Why Us</a>
+        </div>
+        <div class="footer-col">
+          <span class="col-title">Support</span>
+          <a href="index.html#process">Process</a>
+          <a href="#">Get in Touch</a>
+        </div>
+        <div class="footer-col">
+          <span class="col-title">Legal</span>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="copyright">Edition Finder © 2026. All rights reserved.</p>
+        <p class="hosting-note">Venture-scale clarity. Optimized for Google Indexing & GitHub Pages.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Javascript -->
+  <script src="app.js?v=5.0"></script>
+</body>
+</html>
