@@ -3665,8 +3665,6 @@ strong {
 /* Force centered sections to stay centered */
 [dir="rtl"] .text-center,
 [dir="rtl"] .text-center *,
-[dir="rtl"] .section-intro,
-[dir="rtl"] .section-intro *,
 [dir="rtl"] .consultation-header,
 [dir="rtl"] .consultation-header *,
 [dir="rtl"] .form-header,
@@ -3680,20 +3678,33 @@ strong {
 [dir="rtl"] .subpage-header-content,
 [dir="rtl"] .subpage-header-content *,
 [dir="rtl"] .subpage-cta-card,
-[dir="rtl"] .subpage-cta-card * {
+[dir="rtl"] .subpage-cta-card *,
+[dir="rtl"] .problem-bottom-statement,
+[dir="rtl"] .problem-bottom-statement *,
+[dir="rtl"] .services-cta-banner,
+[dir="rtl"] .services-cta-banner * {
   text-align: center !important;
 }
 
-/* Specific text alignment overrides */
-[dir="rtl"] .hero-content {
+/* Specific text alignment overrides (right-aligned to mirror left-aligned LTR) */
+[dir="rtl"] .section-intro,
+[dir="rtl"] .section-intro * {
+  text-align: right !important;
+}
+
+[dir="rtl"] .hero-content,
+[dir="rtl"] .hero-content * {
+  text-align: right !important;
+}
+
+[dir="rtl"] .process-column,
+[dir="rtl"] .process-column *,
+[dir="rtl"] .why-us-column,
+[dir="rtl"] .why-us-column * {
   text-align: right !important;
 }
 
 [dir="rtl"] .problem-card {
-  text-align: right !important;
-}
-
-[dir="rtl"] .problem-bottom-statement {
   text-align: right !important;
 }
 
