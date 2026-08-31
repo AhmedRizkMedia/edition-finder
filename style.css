@@ -3637,7 +3637,7 @@ strong {
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap');
 
 [dir="rtl"] {
-  font-family: 'Cairo', 'Plus Jakarta Sans', sans-serif !important;
+  font-family: 'Alilato', 'Cairo', 'Plus Jakarta Sans', sans-serif !important;
   text-align: right;
 }
 
