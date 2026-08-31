@@ -3381,5 +3381,61 @@ strong {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
+  .trust-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 }
+
+/* --- Trust Section --- */
+.section-trust {
+  padding: 6.5rem 0;
+  background-color: var(--bg-primary);
+}
+.trust-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  padding: 4.5rem;
+  text-align: center;
+}
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-top: 3.5rem;
+  margin-bottom: 3.5rem;
+  text-align: left;
+}
+.trust-bullet {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.bullet-check {
+  font-weight: bold;
+  color: var(--text-white);
+  font-size: 1.15rem;
+}
+.trust-bullet-text {
+  font-family: var(--font-family-sans);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+.trust-conclusion {
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: var(--font-family-sans);
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+.trust-conclusion-note {
+  margin-top: 0.75rem;
+  font-family: var(--font-family);
+  color: var(--text-white);
+  font-size: 1.25rem;
+}
+
 
