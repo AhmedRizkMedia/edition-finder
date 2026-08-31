@@ -3552,3 +3552,44 @@ strong {
 .timeline-step-item.active .timeline-step-text {
   color: var(--text-secondary);
 }
+
+/* Global Section Spacing Flow Optimizations */
+.section-problem,
+.section-services-overview,
+.section-how-it-works,
+.section-work,
+.section-free-consultation,
+.section-final-cta,
+.section-form,
+.section-why-finder,
+.section-one-partner,
+.section-trust,
+.section-subpage-header,
+.section-subpage-cta {
+  padding: 4rem 0 !important;
+}
+
+/* Reduce Hero bottom margin to pull next section closer */
+.hero {
+  padding-bottom: 4rem !important;
+}
+
+@media (max-width: 768px) {
+  .section-problem,
+  .section-services-overview,
+  .section-how-it-works,
+  .section-work,
+  .section-free-consultation,
+  .section-final-cta,
+  .section-form,
+  .section-why-finder,
+  .section-one-partner,
+  .section-trust,
+  .section-subpage-header,
+  .section-subpage-cta {
+    padding: 2.5rem 0 !important;
+  }
+  .hero {
+    padding-bottom: 2.5rem !important;
+  }
+}
