@@ -3636,8 +3636,25 @@ strong {
 /* --- RTL Support (Arabic) --- */
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap');
 
+[dir="rtl"],
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6,
+[dir="rtl"] p,
+[dir="rtl"] a,
+[dir="rtl"] span,
+[dir="rtl"] button,
+[dir="rtl"] input,
+[dir="rtl"] select,
+[dir="rtl"] textarea,
+[dir="rtl"] label {
+  font-family: 'Alilato', 'Cairo', sans-serif !important;
+}
+
 [dir="rtl"] {
-  font-family: 'Alilato', 'Cairo', 'Plus Jakarta Sans', sans-serif !important;
   text-align: right;
 }
 
@@ -3718,12 +3735,8 @@ strong {
   display: block;
 }
 
-/* Sticky Navigation Bar RTL styling */
-[dir="rtl"] .header-container {
-  flex-direction: row-reverse;
-}
+/* Sticky Navigation Bar RTL margins (let flex-direction run natively) */
 [dir="rtl"] .nav-menu {
-  flex-direction: row-reverse;
   margin-right: auto;
   margin-left: 0;
 }
@@ -3739,7 +3752,6 @@ strong {
 [dir="rtl"] .lang-selector-nav {
   margin-right: 0 !important;
   margin-left: 1.5rem !important;
-  flex-direction: row-reverse;
 }
 
 /* Split Timeline Alignment */
@@ -3753,9 +3765,6 @@ strong {
 [dir="rtl"] .vertical-timeline::before {
   left: auto;
   right: 1.5rem;
-}
-[dir="rtl"] .timeline-step-item {
-  flex-direction: row-reverse;
 }
 [dir="rtl"] .timeline-step-content {
   text-align: right;
@@ -3802,43 +3811,22 @@ strong {
 }
 
 /* Forms check inputs */
-[dir="rtl"] .checkbox-group {
-  text-align: right;
-  flex-direction: row-reverse;
-  justify-content: flex-end;
-}
 [dir="rtl"] .checkbox-group label {
   margin-left: 0 !important;
   margin-right: 0.75rem !important;
   display: inline !important;
 }
-[dir="rtl"] .payment-note-box {
-  flex-direction: row-reverse;
-  text-align: right;
-}
 
 /* Footer styling */
-[dir="rtl"] .footer-container {
-  flex-direction: row-reverse;
-}
 [dir="rtl"] .footer-brand {
   text-align: right;
-}
-[dir="rtl"] .footer-links-group {
-  flex-direction: row-reverse;
 }
 [dir="rtl"] .footer-col {
   text-align: right;
 }
-[dir="rtl"] .footer-bottom {
-  flex-direction: row-reverse;
-}
 
 /* Mobile RTL Adjustments */
 @media (max-width: 1024px) {
-  [dir="rtl"] .header-container {
-    flex-direction: row;
-  }
   [dir="rtl"] .nav-menu {
     flex-direction: column;
     align-items: center;
@@ -3853,7 +3841,6 @@ strong {
   [dir="rtl"] .lang-selector-nav {
     margin-left: 0 !important;
     margin-right: 0 !important;
-    flex-direction: row;
   }
 }
 
