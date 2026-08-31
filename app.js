@@ -146,9 +146,20 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       if (isFormValid) {
+        const originalText = btnText ? btnText.textContent : "LET'S TALK";
+        
         // Trigger submitting state
         if (submitBtn) submitBtn.disabled = true;
-        if (btnText) btnText.textContent = 'Sending message...';
+        if (btnText) {
+          const currentLang = document.documentElement.lang || 'en';
+          if (currentLang === 'ar') {
+            btnText.textContent = 'جاري الإرسال...';
+          } else if (currentLang === 'fr') {
+            btnText.textContent = 'Envoi en cours...';
+          } else {
+            btnText.textContent = 'Sending message...';
+          }
+        }
         if (spinner) spinner.style.display = 'inline-block';
 
         // Simulate 1.5 second strategic diagnostic scanning latency
@@ -159,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
           // Reset loader state for button
           if (submitBtn) submitBtn.disabled = false;
-          if (btnText) btnText.textContent = "LET'S TALK";
+          if (btnText) btnText.textContent = originalText;
           if (spinner) spinner.style.display = 'none';
 
           // Scroll wrapper to top of the success card container smoothly

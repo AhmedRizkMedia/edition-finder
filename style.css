@@ -3593,3 +3593,241 @@ strong {
     padding-bottom: 2.5rem !important;
   }
 }
+
+/* --- Language Selector in Navigation Bar --- */
+.lang-selector-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-right: 1rem;
+  font-family: var(--font-family);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+.lang-nav-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast) ease;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+.lang-nav-link:hover {
+  color: var(--text-white);
+}
+.lang-nav-link.active {
+  color: var(--text-white);
+  background-color: var(--border-primary);
+}
+.lang-nav-divider {
+  color: var(--border-primary);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 1024px) {
+  .lang-selector-nav {
+    margin-right: 0;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+  }
+}
+
+/* --- RTL Support (Arabic) --- */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap');
+
+[dir="rtl"] {
+  font-family: 'Cairo', 'Plus Jakarta Sans', sans-serif !important;
+}
+
+[dir="rtl"] .header-container {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .nav-menu {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .nav-menu a {
+  margin-left: 0;
+  margin-right: 1.5rem;
+}
+
+[dir="rtl"] .nav-menu .btn {
+  margin-right: 1.5rem;
+  margin-left: 0;
+}
+
+[dir="rtl"] .lang-selector-nav {
+  margin-right: 0;
+  margin-left: 1.5rem;
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .why-process-split {
+  grid-template-columns: 1fr 1.15fr;
+}
+
+[dir="rtl"] .vertical-timeline {
+  padding-left: 0;
+  padding-right: 0.5rem;
+}
+
+[dir="rtl"] .vertical-timeline::before {
+  left: auto;
+  right: 1.5rem;
+}
+
+[dir="rtl"] .timeline-step-item {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .timeline-step-content {
+  text-align: right;
+}
+
+[dir="rtl"] .why-us-column {
+  text-align: right;
+}
+
+[dir="rtl"] .section-intro {
+  text-align: right;
+}
+
+[dir="rtl"] .problem-card {
+  text-align: right;
+}
+
+[dir="rtl"] .problem-bottom-statement {
+  text-align: right;
+}
+
+[dir="rtl"] .service-card {
+  text-align: right;
+}
+
+[dir="rtl"] .service-link {
+  display: inline-block;
+}
+
+[dir="rtl"] .why-text-block {
+  text-align: right;
+}
+
+[dir="rtl"] .why-quotes {
+  border-left: none;
+  border-right: 2px solid var(--border-primary);
+  padding-left: 0;
+  padding-right: 1.5rem;
+  text-align: right;
+}
+
+[dir="rtl"] .why-quote-item {
+  text-align: right;
+}
+
+[dir="rtl"] .why-stat-card {
+  text-align: right;
+}
+
+[dir="rtl"] .work-card {
+  text-align: right;
+}
+
+[dir="rtl"] .work-metric {
+  text-align: right;
+}
+
+[dir="rtl"] .consultation-header {
+  text-align: center !important;
+}
+
+[dir="rtl"] .consultation-split {
+  direction: rtl;
+}
+
+[dir="rtl"] .consultation-info-col {
+  text-align: right;
+}
+
+[dir="rtl"] .consultation-trust-col {
+  text-align: right;
+}
+
+[dir="rtl"] .consultation-list {
+  padding-left: 0;
+  padding-right: 1.5rem;
+}
+
+[dir="rtl"] .consultation-list li::before {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .consultation-quote-box {
+  border-left: none;
+  border-right: 2px solid var(--text-white);
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+  text-align: right;
+}
+
+[dir="rtl"] .form-header {
+  text-align: center !important;
+}
+
+[dir="rtl"] .form-group {
+  text-align: right;
+}
+
+[dir="rtl"] .checkbox-group {
+  text-align: right;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+[dir="rtl"] .checkbox-group label {
+  margin-left: 0;
+  margin-right: 0.75rem;
+}
+
+[dir="rtl"] .payment-note-box {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+[dir="rtl"] .footer-container {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .footer-brand {
+  text-align: right;
+}
+
+[dir="rtl"] .footer-links-group {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .footer-col {
+  text-align: right;
+}
+
+[dir="rtl"] .footer-bottom {
+  flex-direction: row-reverse;
+}
+
+/* Mobile RTL Adjustments */
+@media (max-width: 1024px) {
+  [dir="rtl"] .header-container {
+    flex-direction: row;
+  }
+  [dir="rtl"] .nav-menu {
+    flex-direction: column;
+    align-items: center;
+  }
+  [dir="rtl"] .lang-selector-nav {
+    margin-left: 0;
+    margin-right: 0;
+    flex-direction: row;
+  }
+}
+
