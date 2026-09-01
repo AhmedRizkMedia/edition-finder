@@ -1,11 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ==========================================
+      // ==========================================
   // 1. Mobile Menu Toggle & Overlay Backdrop
   // ==========================================
   const mobileToggle = document.getElementById('mobile-toggle');
   const navMenu = document.getElementById('nav-menu');
-  const navLinks = document.querySelectorAll('.nav-link, .scroll-trigger-btn');
 
   // Create overlay backdrop if not present
   let navOverlay = document.querySelector('.nav-overlay');
@@ -37,13 +36,33 @@ document.addEventListener('DOMContentLoaded', () => {
       toggleMenu();
     });
 
-    navOverlay.addEventListener('click', () => {
-      toggleMenu(false);
-    });
-
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
+    if (navOverlay) {
+      navOverlay.addEventListener('click', () => {
         toggleMenu(false);
+      });
+    }
+
+    // Direct click handler for all links inside mobile drawer menu
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        toggleMenu(false);
+
+        if (href && href.startsWith('#') && href !== '#') {
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            setTimeout(() => {
+              const headerOffset = 80;
+              const elementPosition = target.getBoundingClientRect().top;
+              const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+              window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+              });
+            }, 120);
+          }
+        }
       });
     });
   }

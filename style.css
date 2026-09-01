@@ -3883,7 +3883,7 @@ strong {
 
 
 /* ==========================================================================
-   MASTER UNIFIED NAVIGATION & RESPONSIVE SYSTEM (NO BLUR OVER MENU)
+   MASTER UNIFIED NAVIGATION & RESPONSIVE SYSTEM (100% CLICKABLE MOBILE LINKS)
    ========================================================================== */
 
 /* Universal Box-Sizing & Viewport Boundary Lock */
@@ -3933,7 +3933,7 @@ main, section, footer, .container, .hero-container {
   height: 100% !important;
 }
 
-/* Nav Overlay Backdrop (DARK TINT ON PAGE - NO BLUR) */
+/* Nav Overlay Backdrop */
 .nav-overlay {
   position: fixed !important;
   top: 0 !important;
@@ -3946,11 +3946,14 @@ main, section, footer, .container, .hero-container {
   z-index: 99990 !important;
   opacity: 0 !important;
   visibility: hidden !important;
+  pointer-events: none !important;
   transition: opacity 0.3s ease, visibility 0.3s ease !important;
 }
+
 .nav-overlay.active {
   opacity: 1 !important;
   visibility: visible !important;
+  pointer-events: auto !important;
 }
 
 /* --------------------------------------------------
@@ -3987,6 +3990,7 @@ main, section, footer, .container, .hero-container {
     margin: 0 !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
+    pointer-events: auto !important;
   }
 
   .nav-menu a.nav-link {
@@ -4003,6 +4007,8 @@ main, section, footer, .container, .hero-container {
     margin: 0 !important;
     white-space: nowrap !important;
     line-height: 1 !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
   }
 
   .nav-menu a.nav-link:hover {
@@ -4018,6 +4024,7 @@ main, section, footer, .container, .hero-container {
     margin-left: 0.75rem !important;
     padding-left: 0.75rem !important;
     border-left: 1px solid rgba(0, 0, 0, 0.12) !important;
+    pointer-events: auto !important;
   }
 
   [dir="rtl"] .lang-selector-nav {
@@ -4042,6 +4049,8 @@ main, section, footer, .container, .hero-container {
     padding: 3px 6px !important;
     border-radius: 4px !important;
     transition: all 0.2s ease !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
   }
 
   .lang-selector-nav .lang-nav-link.active {
@@ -4062,7 +4071,7 @@ main, section, footer, .container, .hero-container {
 }
 
 /* --------------------------------------------------
-   TABLET & MOBILE VIEWPORTS (<= 1024px) - ZERO BLUR OVER MENU
+   TABLET & MOBILE VIEWPORTS (<= 1024px) - 100% CLICKABLE LINKS
    -------------------------------------------------- */
 @media (max-width: 1024px) {
   .header {
@@ -4088,6 +4097,7 @@ main, section, footer, .container, .hero-container {
     z-index: 100000 !important;
     padding: 0 !important;
     margin: 0 !important;
+    pointer-events: auto !important;
   }
 
   .mobile-toggle .bar {
@@ -4114,7 +4124,7 @@ main, section, footer, .container, .hero-container {
     transform: translateY(-8.5px) rotate(-45deg) !important;
   }
 
-  /* SOLID BLACK MOBILE DRAWER (ZERO BLUR) */
+  /* Solid Black Mobile Drawer Menu */
   .nav-menu {
     position: fixed !important;
     top: 0 !important;
@@ -4139,14 +4149,16 @@ main, section, footer, .container, .hero-container {
     box-shadow: -10px 0 40px rgba(0, 0, 0, 0.9) !important;
     overflow-y: auto !important;
     margin: 0 !important;
+    pointer-events: auto !important;
   }
 
   .nav-menu.active {
     right: 0 !important;
     left: auto !important;
+    pointer-events: auto !important;
   }
 
-  /* PURE SHARP WHITE TEXT (ZERO BLUR / ZERO opacity loss) */
+  /* PURE SHARP WHITE TEXT (100% TOUCH CLICKABLE) */
   .nav-menu a.nav-link,
   .nav-menu .nav-link {
     font-size: 1.15rem !important;
@@ -4160,6 +4172,11 @@ main, section, footer, .container, .hero-container {
     display: block !important;
     text-decoration: none !important;
     margin: 0 !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    position: relative !important;
+    z-index: 100001 !important;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0.2) !important;
   }
 
   .nav-menu a.nav-link:hover,
@@ -4182,6 +4199,7 @@ main, section, footer, .container, .hero-container {
     align-items: center !important;
     gap: 0.75rem !important;
     transform: none !important;
+    pointer-events: auto !important;
   }
 
   .nav-menu .lang-selector-nav .lang-nav-link {
@@ -4192,6 +4210,10 @@ main, section, footer, .container, .hero-container {
     text-decoration: none !important;
     background: transparent !important;
     padding: 2px 6px !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    position: relative !important;
+    z-index: 100001 !important;
   }
 
   .nav-menu .lang-selector-nav .lang-nav-link.active {
