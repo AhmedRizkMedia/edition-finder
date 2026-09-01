@@ -3900,9 +3900,13 @@ html, body {
   position: relative !important;
 }
 
-main, section, header, footer, .container, .hero-container {
+main, section, footer, .hero-container {
   max-width: 100vw !important;
   overflow-x: hidden !important;
+}
+
+.header, .header-container {
+  overflow: visible !important;
 }
 
 /* Base Header Stacking Context */
