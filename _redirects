@@ -1,0 +1,3 @@
+# Netlify HTTPS Redirection Rule
+http://theeditionfinder.com/*  https://theeditionfinder.com/:splat  301!
+http://www.theeditionfinder.com/*  https://theeditionfinder.com/:splat  301!
