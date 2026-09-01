@@ -3883,7 +3883,7 @@ strong {
 
 
 /* ==========================================================================
-   MASTER UNIFIED NAVIGATION & RESPONSIVE SYSTEM (100% CLICKABLE MOBILE LINKS)
+   MASTER UNIFIED NAVIGATION & RESPONSIVE SYSTEM (AIRTIGHT Z-INDEX LAYER)
    ========================================================================== */
 
 /* Universal Box-Sizing & Viewport Boundary Lock */
@@ -3909,14 +3909,37 @@ main, section, footer, .container, .hero-container {
   overflow: visible !important;
 }
 
-/* Header Navbar Styling */
+/* Nav Overlay Backdrop (Sits UNDER Header & Drawer) */
+.nav-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(0, 0, 0, 0.65) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  z-index: 900 !important; /* Low layer under header & drawer */
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition: opacity 0.3s ease, visibility 0.3s ease !important;
+}
+
+.nav-overlay.active {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+/* Header Navbar Styling (Layer 1000) */
 .header {
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
   width: 100% !important;
   height: var(--header-height, 70px) !important;
-  z-index: 9999 !important;
+  z-index: 1000 !important;
   background: rgba(255, 255, 255, 0.98) !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
   display: flex !important;
@@ -3931,29 +3954,6 @@ main, section, footer, .container, .hero-container {
   align-items: center !important;
   justify-content: space-between !important;
   height: 100% !important;
-}
-
-/* Nav Overlay Backdrop */
-.nav-overlay {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
-  background: rgba(0, 0, 0, 0.65) !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  z-index: 99990 !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-  transition: opacity 0.3s ease, visibility 0.3s ease !important;
-}
-
-.nav-overlay.active {
-  opacity: 1 !important;
-  visibility: visible !important;
-  pointer-events: auto !important;
 }
 
 /* --------------------------------------------------
@@ -3985,7 +3985,7 @@ main, section, footer, .container, .hero-container {
     align-items: center !important;
     gap: 1.35rem !important;
     padding: 0 !important;
-    z-index: 10000 !important;
+    z-index: 1005 !important;
     overflow: visible !important;
     margin: 0 !important;
     backdrop-filter: none !important;
@@ -4071,7 +4071,7 @@ main, section, footer, .container, .hero-container {
 }
 
 /* --------------------------------------------------
-   TABLET & MOBILE VIEWPORTS (<= 1024px) - 100% CLICKABLE LINKS
+   TABLET & MOBILE VIEWPORTS (<= 1024px) - DRAWER LAYER 1005
    -------------------------------------------------- */
 @media (max-width: 1024px) {
   .header {
@@ -4083,7 +4083,7 @@ main, section, footer, .container, .hero-container {
     display: none !important;
   }
 
-  /* Mobile Hamburger Button */
+  /* Mobile Hamburger Button (Layer 1010) */
   .mobile-toggle {
     display: flex !important;
     flex-direction: column !important;
@@ -4094,7 +4094,7 @@ main, section, footer, .container, .hero-container {
     background: transparent !important;
     border: none !important;
     cursor: pointer !important;
-    z-index: 100000 !important;
+    z-index: 1010 !important;
     padding: 0 !important;
     margin: 0 !important;
     pointer-events: auto !important;
@@ -4124,7 +4124,7 @@ main, section, footer, .container, .hero-container {
     transform: translateY(-8.5px) rotate(-45deg) !important;
   }
 
-  /* Solid Black Mobile Drawer Menu */
+  /* Mobile Drawer Menu (Layer 1005 - HIGHER THAN OVERLAY 900) */
   .nav-menu {
     position: fixed !important;
     top: 0 !important;
@@ -4145,7 +4145,7 @@ main, section, footer, .container, .hero-container {
     padding: 5.5rem 1.75rem 2.5rem !important;
     gap: 1.25rem !important;
     transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    z-index: 99999 !important;
+    z-index: 1005 !important; /* Higher than nav-overlay (900) */
     box-shadow: -10px 0 40px rgba(0, 0, 0, 0.9) !important;
     overflow-y: auto !important;
     margin: 0 !important;
@@ -4158,7 +4158,7 @@ main, section, footer, .container, .hero-container {
     pointer-events: auto !important;
   }
 
-  /* PURE SHARP WHITE TEXT (100% TOUCH CLICKABLE) */
+  /* PURE SHARP WHITE TEXT (LAYER 1006) */
   .nav-menu a.nav-link,
   .nav-menu .nav-link {
     font-size: 1.15rem !important;
@@ -4175,7 +4175,7 @@ main, section, footer, .container, .hero-container {
     pointer-events: auto !important;
     cursor: pointer !important;
     position: relative !important;
-    z-index: 100001 !important;
+    z-index: 1006 !important;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0.2) !important;
   }
 
@@ -4213,7 +4213,7 @@ main, section, footer, .container, .hero-container {
     pointer-events: auto !important;
     cursor: pointer !important;
     position: relative !important;
-    z-index: 100001 !important;
+    z-index: 1006 !important;
   }
 
   .nav-menu .lang-selector-nav .lang-nav-link.active {
