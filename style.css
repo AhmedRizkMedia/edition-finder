@@ -3883,7 +3883,7 @@ strong {
 
 
 /* ==========================================================================
-   MASTER UNIFIED NAVIGATION & RESPONSIVE SYSTEM (ARABIC BASELINE FIX)
+   MASTER UNIFIED NAVIGATION & RESPONSIVE SYSTEM (HIGH CONTRAST MOBILE DRAWER)
    ========================================================================== */
 
 /* Universal Box-Sizing & Viewport Boundary Lock */
@@ -4027,7 +4027,7 @@ main, section, footer, .container, .hero-container {
     padding-right: 0.75rem !important;
     border-left: none !important;
     border-right: 1px solid rgba(0, 0, 0, 0.12) !important;
-    transform: translateY(1.5px) !important; /* Perfect baseline match for Alilato / Cairo fonts */
+    transform: translateY(1.5px) !important;
   }
 
   .lang-selector-nav .lang-nav-link {
@@ -4062,7 +4062,7 @@ main, section, footer, .container, .hero-container {
 }
 
 /* --------------------------------------------------
-   TABLET & MOBILE VIEWPORTS (<= 1024px)
+   TABLET & MOBILE VIEWPORTS (<= 1024px) - HIGH CONTRAST DRAWER
    -------------------------------------------------- */
 @media (max-width: 1024px) {
   .header {
@@ -4114,7 +4114,7 @@ main, section, footer, .container, .hero-container {
     transform: translateY(-8.5px) rotate(-45deg) !important;
   }
 
-  /* Standalone Body-Level Mobile Menu Drawer */
+  /* Solid Black Mobile Drawer Menu */
   .nav-menu {
     position: fixed !important;
     top: 0 !important;
@@ -4144,7 +4144,9 @@ main, section, footer, .container, .hero-container {
     left: auto !important;
   }
 
-  .nav-menu a.nav-link {
+  /* PURE BRIGHT WHITE CONTRAST FOR ALL MOBILE DRAWER LINKS */
+  .nav-menu a.nav-link,
+  .nav-menu .nav-link {
     font-size: 1.15rem !important;
     font-weight: 600 !important;
     color: #ffffff !important;
@@ -4156,6 +4158,11 @@ main, section, footer, .container, .hero-container {
     display: block !important;
     text-decoration: none !important;
     margin: 0 !important;
+  }
+
+  .nav-menu a.nav-link:hover,
+  .nav-menu .nav-link:hover {
+    color: #38bdf8 !important;
   }
 
   .nav-menu .lang-selector-nav {
@@ -4175,17 +4182,26 @@ main, section, footer, .container, .hero-container {
     transform: none !important;
   }
 
-  .nav-menu .lang-nav-link {
+  .nav-menu .lang-selector-nav .lang-nav-link {
     font-size: 1rem !important;
     font-weight: 600 !important;
     color: #94a3b8 !important;
+    opacity: 1 !important;
     text-decoration: none !important;
+    background: transparent !important;
+    padding: 2px 6px !important;
   }
 
-  .nav-menu .lang-nav-link.active {
+  .nav-menu .lang-selector-nav .lang-nav-link.active {
     color: #ffffff !important;
+    opacity: 1 !important;
     text-decoration: underline !important;
-    background-color: transparent !important;
+    background: transparent !important;
+  }
+
+  .nav-menu .lang-selector-nav .lang-nav-divider {
+    color: rgba(255, 255, 255, 0.4) !important;
+    font-size: 0.85rem !important;
   }
 
   /* RTL Mobile Drawer Overrides */
