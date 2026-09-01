@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edition Finder — Offline QR Code</title>
+  <style>
+    body {
+      background-color: #0b0c10;
+      color: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    .card {
+      background: #151821;
+      padding: 3rem;
+      border-radius: 20px;
+      border: 1px solid #2a2e3d;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+      max-width: 450px;
+    }
+    .qr-box {
+      background: #ffffff;
+      padding: 1.5rem;
+      border-radius: 16px;
+      margin: 1.5rem 0;
+      display: inline-block;
+    }
+    .qr-box img {
+      width: 280px;
+      height: 280px;
+      display: block;
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin: 0 0 0.5rem 0;
+      letter-spacing: -0.02em;
+    }
+    p {
+      color: #94a3b8;
+      font-size: 0.95rem;
+      margin: 0 0 1rem 0;
+    }
+    .url-tag {
+      background: #202533;
+      color: #38bdf8;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Edition Finder</h1>
+    <p>Scan with any camera to visit</p>
+    
+    <div class="qr-box">
+      <img src="qrcode.svg" alt="Edition Finder QR Code">
+    </div>
+
+    <div class="url-tag">https://theeditionfinder.com</div>
+  </div>
+
+</body>
+</html>
