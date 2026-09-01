@@ -3898,7 +3898,7 @@ strong {
 
 
 /* ==========================================================================
-   PERFECT MOBILE & TABLET RESPONSIVE OVERHAUL (STRICT ENFORCEMENT)
+   PERFECT MOBILE & TABLET RESPONSIVE OVERHAUL (Z-INDEX STACKING FIX)
    ========================================================================== */
 
 /* Universal Box-Sizing & Viewport Boundary Lock */
@@ -3920,6 +3920,16 @@ main, section, header, footer, .container, .hero-container {
   overflow-x: hidden !important;
 }
 
+/* Base Header Stacking Context */
+.header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  z-index: 9999 !important; /* Stack header above backdrop overlay */
+  background: var(--bg-primary, #ffffff) !important;
+}
+
 /* Nav Overlay Backdrop */
 .nav-overlay {
   position: fixed !important;
@@ -3927,10 +3937,10 @@ main, section, header, footer, .container, .hero-container {
   left: 0 !important;
   width: 100vw !important;
   height: 100vh !important;
-  background: rgba(0, 0, 0, 0.75) !important;
-  backdrop-filter: blur(6px) !important;
-  -webkit-backdrop-filter: blur(6px) !important;
-  z-index: 998 !important;
+  background: rgba(0, 0, 0, 0.7) !important;
+  backdrop-filter: blur(5px) !important;
+  -webkit-backdrop-filter: blur(5px) !important;
+  z-index: 9990 !important; /* Sits just under header */
   opacity: 0 !important;
   visibility: hidden !important;
   transition: opacity 0.3s ease, visibility 0.3s ease !important;
@@ -3953,9 +3963,10 @@ main, section, header, footer, .container, .hero-container {
     justify-content: space-between !important;
     align-items: center !important;
     width: 100% !important;
+    z-index: 9999 !important;
   }
 
-  /* Hamburger Toggle Button (BLACK BARS FOR WHITE HEADER) */
+  /* Hamburger Toggle Button (DARK BARS FOR WHITE HEADER) */
   .mobile-toggle {
     display: flex !important;
     flex-direction: column !important;
@@ -3966,7 +3977,7 @@ main, section, header, footer, .container, .hero-container {
     background: transparent !important;
     border: none !important;
     cursor: pointer !important;
-    z-index: 1001 !important;
+    z-index: 10001 !important; /* High layer so X stays clickable */
     padding: 0 !important;
     margin: 0 !important;
   }
@@ -4015,7 +4026,7 @@ main, section, header, footer, .container, .hero-container {
     padding: 5.5rem 1.75rem 2.5rem !important;
     gap: 1.25rem !important;
     transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    z-index: 999 !important;
+    z-index: 10000 !important; /* Sits on top of nav-overlay */
     box-shadow: -10px 0 40px rgba(0, 0, 0, 0.9) !important;
     overflow-y: auto !important;
   }
