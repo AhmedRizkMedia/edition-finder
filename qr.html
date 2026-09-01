@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Edition Finder — Offline QR Code</title>
+  <title>Edition Finder — Offline High-Res QR Code</title>
   <style>
     body {
       background-color: #0b0c10;
@@ -53,6 +53,20 @@
       border-radius: 8px;
       font-family: monospace;
       font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+    .btn-download {
+      display: inline-block;
+      background: #ffffff;
+      color: #0b0c10;
+      padding: 0.8rem 1.5rem;
+      border-radius: 10px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.2s ease;
+    }
+    .btn-download:hover {
+      transform: translateY(-2px);
     }
   </style>
 </head>
@@ -60,13 +74,17 @@
 
   <div class="card">
     <h1>Edition Finder</h1>
-    <p>Scan with any camera to visit</p>
+    <p>Scan with any camera to visit website</p>
     
     <div class="qr-box">
-      <img src="qrcode.svg" alt="Edition Finder QR Code">
+      <img src="qrcode.png" alt="Edition Finder QR Code PNG">
     </div>
 
     <div class="url-tag">https://theeditionfinder.com</div>
+
+    <div>
+      <a href="qrcode.png" download="edition_finder_qr.png" class="btn-download">Download High-Res PNG (1155x1155)</a>
+    </div>
   </div>
 
 </body>
