@@ -3781,19 +3781,9 @@ strong {
 }
 
 /* Sticky Navigation Bar RTL margins (let flex-direction run natively) */
-[dir="rtl"] .nav-menu {
-  margin-right: auto;
-  margin-left: 0;
-}
-[dir="rtl"] .nav-menu a {
-  margin-left: 0 !important;
-  margin-right: 1.5rem !important;
-  text-align: right;
-}
-[dir="rtl"] .nav-menu .btn {
-  margin-left: 0 !important;
-  margin-right: 1.5rem !important;
-}
+
+
+
 [dir="rtl"] .lang-selector-nav {
   margin-right: 0 !important;
   margin-left: 1.5rem !important;
@@ -3870,12 +3860,7 @@ strong {
   text-align: right;
 }
 
-/* Mobile RTL Adjustments */
-@media (max-width: 1024px) {
-  [dir="rtl"] .nav-menu {
-    flex-direction: column;
-    align-items: center;
-  }
+
   [dir="rtl"] .nav-menu a {
     margin-right: 0 !important;
     margin-bottom: 1.25rem;
@@ -3898,7 +3883,7 @@ strong {
 
 
 /* ==========================================================================
-   PERFECT MOBILE & TABLET RESPONSIVE OVERHAUL (Z-INDEX STACKING FIX)
+   MASTER MOBILE & TABLET RESPONSIVE SYSTEM (100% UNIFIED & ACCESSIBLE)
    ========================================================================== */
 
 /* Universal Box-Sizing & Viewport Boundary Lock */
@@ -3926,8 +3911,21 @@ main, section, header, footer, .container, .hero-container {
   top: 0 !important;
   left: 0 !important;
   width: 100% !important;
-  z-index: 9999 !important; /* Stack header above backdrop overlay */
+  height: var(--header-height, 70px) !important;
+  z-index: 9999 !important;
   background: var(--bg-primary, #ffffff) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.header-container {
+  width: 90% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
 }
 
 /* Nav Overlay Backdrop */
@@ -3937,10 +3935,10 @@ main, section, header, footer, .container, .hero-container {
   left: 0 !important;
   width: 100vw !important;
   height: 100vh !important;
-  background: rgba(0, 0, 0, 0.7) !important;
-  backdrop-filter: blur(5px) !important;
-  -webkit-backdrop-filter: blur(5px) !important;
-  z-index: 9990 !important; /* Sits just under header */
+  background: rgba(0, 0, 0, 0.75) !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+  z-index: 9990 !important;
   opacity: 0 !important;
   visibility: hidden !important;
   transition: opacity 0.3s ease, visibility 0.3s ease !important;
@@ -3950,34 +3948,24 @@ main, section, header, footer, .container, .hero-container {
   visibility: visible !important;
 }
 
-/* Breakpoint 991px: Tablets and Mobile Phones */
+/* Breakpoint 991px: Mobile & Tablet Viewports */
 @media (max-width: 991px) {
-  :root {
-    --header-height: 70px !important;
+  .header-cta {
+    display: none !important;
   }
 
-  .header-container {
-    padding: 0 1.25rem !important;
-    position: relative !important;
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    width: 100% !important;
-    z-index: 9999 !important;
-  }
-
-  /* Hamburger Toggle Button (DARK BARS FOR WHITE HEADER) */
+  /* Mobile Toggle Button */
   .mobile-toggle {
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
-    width: 42px !important;
-    height: 42px !important;
+    width: 40px !important;
+    height: 40px !important;
     background: transparent !important;
     border: none !important;
     cursor: pointer !important;
-    z-index: 10001 !important; /* High layer so X stays clickable */
+    z-index: 10002 !important;
     padding: 0 !important;
     margin: 0 !important;
   }
@@ -3986,7 +3974,7 @@ main, section, header, footer, .container, .hero-container {
     display: block !important;
     width: 24px !important;
     height: 2.5px !important;
-    background-color: #0f172a !important; /* DARK CHARCOAL — HIGH CONTRAST ON WHITE HEADER */
+    background-color: #0f172a !important; /* DARK CHARCOAL BARS FOR WHITE HEADER */
     margin: 3px 0 !important;
     border-radius: 2px !important;
     transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease !important;
@@ -4007,14 +3995,14 @@ main, section, header, footer, .container, .hero-container {
     transform: translateY(-8.5px) rotate(-45deg) !important;
   }
 
-  /* Mobile Slide-Out Drawer (SOLID DARK BACKGROUND #0B0C10) */
+  /* Mobile Slide-Out Menu Drawer */
   .nav-menu {
     position: fixed !important;
     top: 0 !important;
     right: -100% !important;
     left: auto !important;
     width: 85% !important;
-    max-width: 320px !important;
+    max-width: 300px !important;
     height: 100vh !important;
     background-color: #0b0c10 !important;
     border-left: 1px solid rgba(255, 255, 255, 0.15) !important;
@@ -4026,7 +4014,7 @@ main, section, header, footer, .container, .hero-container {
     padding: 5.5rem 1.75rem 2.5rem !important;
     gap: 1.25rem !important;
     transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    z-index: 10000 !important; /* Sits on top of nav-overlay */
+    z-index: 10001 !important;
     box-shadow: -10px 0 40px rgba(0, 0, 0, 0.9) !important;
     overflow-y: auto !important;
   }
@@ -4047,6 +4035,7 @@ main, section, header, footer, .container, .hero-container {
     text-align: left !important;
     display: block !important;
     text-decoration: none !important;
+    margin: 0 !important;
   }
 
   .nav-menu .lang-selector-nav {
@@ -4057,6 +4046,8 @@ main, section, header, footer, .container, .hero-container {
     display: flex !important;
     align-items: center !important;
     gap: 0.75rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 
   .nav-menu .lang-nav-link {
@@ -4089,10 +4080,7 @@ main, section, header, footer, .container, .hero-container {
 
   [dir="rtl"] .nav-menu a.nav-link {
     text-align: right !important;
-  }
-
-  .header-cta {
-    display: none !important;
+    margin: 0 !important;
   }
 
   /* Force ALL Card Grids to Single Column on Mobile */
