@@ -162,6 +162,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if (spinner) spinner.style.display = 'inline-block';
 
+        // Submit form data to Netlify Forms asynchronously
+        try {
+          const formData = new FormData(form);
+          fetch('/', {
+            method: 'POST',
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString()
+          }).catch(err => console.log('Netlify form submit error:', err));
+        } catch (e) {
+          console.log('Form submission error:', e);
+        }
+
         // Simulate 1.5 second strategic diagnostic scanning latency
         setTimeout(() => {
           // Transition panels

@@ -72,7 +72,8 @@
           
           <!-- State 1: Active Form -->
           <div class="form-state-active" id="form-state-active">
-            <form id="blueprint-form" class="blueprint-form" novalidate>
+            <form id="blueprint-form" class="blueprint-form" name="consultation-form" data-netlify="true" novalidate>
+                <input type="hidden" name="form-name" value="consultation-form">
               <div class="form-grid">
                 <!-- Full Name -->
                 <div class="form-group">
@@ -261,6 +262,6 @@
   </footer>
 
   <!-- Javascript -->
-  <script src="app.js?v=6.0"></script>
+  <script src="app.js?v=7.0"></script>
 </body>
 </html>

@@ -602,7 +602,8 @@
               <p class="form-subtitle">Remplissez les champs ci-dessous pour planifier votre consultation commerciale gratuite. Notre équipe examinera ce que vous avez partagé et vous contactera dans les 24 heures pour organiser votre consultation gratuite.</p>
             </div>
             
-            <form id="blueprint-form" class="blueprint-form" novalidate>
+            <form id="blueprint-form" class="blueprint-form" name="consultation-form" data-netlify="true" novalidate>
+                <input type="hidden" name="form-name" value="consultation-form">
               <div class="form-grid">
                 <!-- Full Name -->
                 <div class="form-group">
@@ -792,6 +793,6 @@
   </footer>
 
   <!-- Javascript -->
-  <script src="../app.js?v=6.0"></script>
+  <script src="../app.js?v=7.0"></script>
 </body>
 </html>

@@ -589,7 +589,8 @@
               <p class="form-subtitle">أكمل الحقول أدناه لجدولة استشارتك المجانية للأعمال. سيقوم فريقنا بمراجعة ما شاركته والاتصال بك في غضون ٢٤ ساعة لترتيب استشارتك المجانية.</p>
             </div>
             
-            <form id="blueprint-form" class="blueprint-form" novalidate>
+            <form id="blueprint-form" class="blueprint-form" name="consultation-form" data-netlify="true" novalidate>
+                <input type="hidden" name="form-name" value="consultation-form">
               <div class="form-grid">
                 <!-- Full Name -->
                 <div class="form-group">
@@ -794,6 +795,6 @@
   </footer>
 
   <!-- Javascript -->
-  <script src="../app.js?v=6.0"></script>
+  <script src="../app.js?v=7.0"></script>
 </body>
 </html>

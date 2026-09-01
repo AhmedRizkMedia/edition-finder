@@ -602,7 +602,8 @@
               <p class="form-subtitle">Complete the fields below to schedule your free business consultation. Our team will review what you've shared and contact you within 24 hours to arrange your free consultation.</p>
             </div>
             
-            <form id="blueprint-form" class="blueprint-form" novalidate>
+            <form id="blueprint-form" class="blueprint-form" name="consultation-form" data-netlify="true" novalidate>
+                <input type="hidden" name="form-name" value="consultation-form">
               <div class="form-grid">
                 <!-- Full Name -->
                 <div class="form-group">
@@ -807,6 +808,6 @@
   </footer>
 
   <!-- Javascript -->
-  <script src="app.js?v=6.0"></script>
+  <script src="app.js?v=7.0"></script>
 </body>
 </html>
