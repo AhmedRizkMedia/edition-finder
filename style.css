@@ -3883,7 +3883,7 @@ strong {
 
 
 /* ==========================================================================
-   MASTER UNIFIED NAVIGATION & RESPONSIVE SYSTEM (APPLE MINIMALIST HEADER)
+   MASTER UNIFIED NAVIGATION & RESPONSIVE SYSTEM (100% ACCESSIBLE)
    ========================================================================== */
 
 /* Universal Box-Sizing & Viewport Boundary Lock */
@@ -3909,7 +3909,7 @@ main, section, footer, .container, .hero-container {
   overflow: visible !important;
 }
 
-/* Apple Header Bar Styling */
+/* Header Navbar Styling */
 .header {
   position: fixed !important;
   top: 0 !important;
@@ -4113,7 +4113,7 @@ main, section, footer, .container, .hero-container {
     transform: translateY(-8.5px) rotate(-45deg) !important;
   }
 
-  /* Standalone Body-Level Mobile Menu Drawer */
+  /* Mobile Menu Drawer */
   .nav-menu {
     position: fixed !important;
     top: 0 !important;
