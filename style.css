@@ -3883,7 +3883,7 @@ strong {
 
 
 /* ==========================================================================
-   MASTER UNIFIED NAVIGATION & RESPONSIVE SYSTEM (PIXEL-PERFECT ALIGNMENT)
+   MASTER UNIFIED NAVIGATION & RESPONSIVE SYSTEM (NATURAL FLEX FLOW)
    ========================================================================== */
 
 /* Universal Box-Sizing & Viewport Boundary Lock */
@@ -3933,6 +3933,7 @@ main, section, footer, .container, .hero-container {
   align-items: center !important;
   justify-content: space-between !important;
   height: 100% !important;
+  gap: 1.5rem !important;
 }
 
 /* Header Actions (Language Selector + CTA Button + Mobile Toggle) */
@@ -3940,27 +3941,29 @@ main, section, footer, .container, .hero-container {
   display: flex !important;
   align-items: center !important;
   gap: 1.25rem !important;
+  flex-shrink: 0 !important;
 }
 
 /* Language Selector Alignment Normalization */
 .lang-selector-nav {
   display: inline-flex !important;
   align-items: center !important;
-  gap: 0.35rem !important;
+  gap: 0.3rem !important;
   line-height: 1 !important;
   vertical-align: middle !important;
+  flex-shrink: 0 !important;
 }
 
 .lang-selector-nav .lang-nav-link {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  font-size: 0.85rem !important;
+  font-size: 0.8rem !important;
   font-weight: 600 !important;
   line-height: 1 !important;
   color: #64748b !important;
   text-decoration: none !important;
-  padding: 2px 6px !important;
+  padding: 3px 6px !important;
   border-radius: 4px !important;
   transition: all 0.2s ease !important;
 }
@@ -3968,7 +3971,7 @@ main, section, footer, .container, .hero-container {
 .lang-selector-nav .lang-nav-link.active {
   color: #0f172a !important;
   font-weight: 700 !important;
-  background-color: rgba(15, 23, 42, 0.06) !important;
+  background-color: rgba(15, 23, 42, 0.08) !important;
 }
 
 .lang-selector-nav .lang-nav-divider {
@@ -3978,7 +3981,7 @@ main, section, footer, .container, .hero-container {
   color: #cbd5e1 !important;
   font-size: 0.75rem !important;
   opacity: 0.6 !important;
-  margin: 0 1px !important;
+  margin: 0 !important;
 }
 
 /* Nav Overlay Backdrop */
@@ -4002,9 +4005,9 @@ main, section, footer, .container, .hero-container {
 }
 
 /* --------------------------------------------------
-   DESKTOP VIEWPORT (> 991px)
+   DESKTOP VIEWPORT (> 1024px)
    -------------------------------------------------- */
-@media (min-width: 992px) {
+@media (min-width: 1025px) {
   .mobile-toggle {
     display: none !important;
   }
@@ -4017,12 +4020,14 @@ main, section, footer, .container, .hero-container {
     display: inline-flex !important;
   }
 
+  /* Natural Flex Flow Nav Menu — IMPOSSIBLE TO OVERLAP */
   .nav-menu {
-    position: fixed !important;
-    top: 0 !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    height: var(--header-height, 70px) !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    height: auto !important;
     width: auto !important;
     background: transparent !important;
     border: none !important;
@@ -4030,16 +4035,16 @@ main, section, footer, .container, .hero-container {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
-    gap: 2rem !important;
+    gap: 1.5rem !important;
     padding: 0 !important;
     z-index: 10000 !important;
-    right: auto !important;
     overflow: visible !important;
+    margin: 0 auto !important; /* Centers nav links in available space */
   }
 
   .nav-menu a.nav-link {
     color: #475569 !important;
-    font-size: 0.875rem !important;
+    font-size: 0.85rem !important;
     font-weight: 500 !important;
     text-decoration: none !important;
     padding: 0 !important;
@@ -4056,19 +4061,12 @@ main, section, footer, .container, .hero-container {
   .nav-menu a.nav-link:hover {
     color: #0f172a !important;
   }
-
-  /* RTL Desktop Nav Centering */
-  [dir="rtl"] .nav-menu {
-    left: 50% !important;
-    right: auto !important;
-    transform: translateX(-50%) !important;
-  }
 }
 
 /* --------------------------------------------------
-   MOBILE & TABLET VIEWPORTS (<= 991px)
+   TABLET & MOBILE VIEWPORTS (<= 1024px)
    -------------------------------------------------- */
-@media (max-width: 991px) {
+@media (max-width: 1024px) {
   .header {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
@@ -4148,6 +4146,7 @@ main, section, footer, .container, .hero-container {
     z-index: 99999 !important;
     box-shadow: -10px 0 40px rgba(0, 0, 0, 0.9) !important;
     overflow-y: auto !important;
+    margin: 0 !important;
   }
 
   .nav-menu.active {
