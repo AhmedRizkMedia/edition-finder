@@ -3883,7 +3883,7 @@ strong {
 
 
 /* ==========================================================================
-   MASTER UNIFIED NAVIGATION & RESPONSIVE SYSTEM (NATURAL FLEX FLOW)
+   MASTER UNIFIED NAVIGATION & RESPONSIVE SYSTEM (APPLE MINIMALIST HEADER)
    ========================================================================== */
 
 /* Universal Box-Sizing & Viewport Boundary Lock */
@@ -3909,7 +3909,7 @@ main, section, footer, .container, .hero-container {
   overflow: visible !important;
 }
 
-/* Header Navbar Styling */
+/* Apple Header Bar Styling */
 .header {
   position: fixed !important;
   top: 0 !important;
@@ -3933,55 +3933,6 @@ main, section, footer, .container, .hero-container {
   align-items: center !important;
   justify-content: space-between !important;
   height: 100% !important;
-  gap: 1.5rem !important;
-}
-
-/* Header Actions (Language Selector + CTA Button + Mobile Toggle) */
-.header-actions {
-  display: flex !important;
-  align-items: center !important;
-  gap: 1.25rem !important;
-  flex-shrink: 0 !important;
-}
-
-/* Language Selector Alignment Normalization */
-.lang-selector-nav {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 0.3rem !important;
-  line-height: 1 !important;
-  vertical-align: middle !important;
-  flex-shrink: 0 !important;
-}
-
-.lang-selector-nav .lang-nav-link {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  font-size: 0.8rem !important;
-  font-weight: 600 !important;
-  line-height: 1 !important;
-  color: #64748b !important;
-  text-decoration: none !important;
-  padding: 3px 6px !important;
-  border-radius: 4px !important;
-  transition: all 0.2s ease !important;
-}
-
-.lang-selector-nav .lang-nav-link.active {
-  color: #0f172a !important;
-  font-weight: 700 !important;
-  background-color: rgba(15, 23, 42, 0.08) !important;
-}
-
-.lang-selector-nav .lang-nav-divider {
-  display: inline-flex !important;
-  align-items: center !important;
-  line-height: 1 !important;
-  color: #cbd5e1 !important;
-  font-size: 0.75rem !important;
-  opacity: 0.6 !important;
-  margin: 0 !important;
 }
 
 /* Nav Overlay Backdrop */
@@ -4005,24 +3956,20 @@ main, section, footer, .container, .hero-container {
 }
 
 /* --------------------------------------------------
-   DESKTOP VIEWPORT (> 1024px)
+   DESKTOP VIEWPORT (> 1024px) - APPLE MINIMALIST HEADER
    -------------------------------------------------- */
 @media (min-width: 1025px) {
   .mobile-toggle {
     display: none !important;
   }
 
-  .mobile-only-lang {
-    display: none !important;
+  .header-cta {
+    display: block !important;
+    margin: 0 !important;
   }
 
-  .desktop-only-lang {
-    display: inline-flex !important;
-  }
-
-  /* Natural Flex Flow Nav Menu — IMPOSSIBLE TO OVERLAP */
   .nav-menu {
-    position: relative !important;
+    position: static !important;
     top: auto !important;
     left: auto !important;
     right: auto !important;
@@ -4035,11 +3982,11 @@ main, section, footer, .container, .hero-container {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
-    gap: 1.5rem !important;
+    gap: 1.35rem !important;
     padding: 0 !important;
     z-index: 10000 !important;
     overflow: visible !important;
-    margin: 0 auto !important; /* Centers nav links in available space */
+    margin: 0 !important;
   }
 
   .nav-menu a.nav-link {
@@ -4061,6 +4008,56 @@ main, section, footer, .container, .hero-container {
   .nav-menu a.nav-link:hover {
     color: #0f172a !important;
   }
+
+  .lang-selector-nav {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.25rem !important;
+    line-height: 1 !important;
+    vertical-align: middle !important;
+    margin-left: 0.75rem !important;
+    padding-left: 0.75rem !important;
+    border-left: 1px solid rgba(0, 0, 0, 0.1) !important;
+  }
+
+  [dir="rtl"] .lang-selector-nav {
+    margin-left: 0 !important;
+    margin-right: 0.75rem !important;
+    padding-left: 0 !important;
+    padding-right: 0.75rem !important;
+    border-left: none !important;
+    border-right: 1px solid rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .lang-selector-nav .lang-nav-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    color: #64748b !important;
+    text-decoration: none !important;
+    padding: 3px 6px !important;
+    border-radius: 4px !important;
+    transition: all 0.2s ease !important;
+  }
+
+  .lang-selector-nav .lang-nav-link.active {
+    color: #0f172a !important;
+    font-weight: 700 !important;
+    background-color: rgba(15, 23, 42, 0.08) !important;
+  }
+
+  .lang-selector-nav .lang-nav-divider {
+    display: inline-flex !important;
+    align-items: center !important;
+    line-height: 1 !important;
+    color: #cbd5e1 !important;
+    font-size: 0.75rem !important;
+    opacity: 0.6 !important;
+    margin: 0 !important;
+  }
 }
 
 /* --------------------------------------------------
@@ -4074,14 +4071,6 @@ main, section, footer, .container, .hero-container {
 
   .header-cta {
     display: none !important;
-  }
-
-  .desktop-only-lang {
-    display: none !important;
-  }
-
-  .mobile-only-lang {
-    display: flex !important;
   }
 
   /* Mobile Hamburger Button */
@@ -4172,12 +4161,16 @@ main, section, footer, .container, .hero-container {
     margin-top: 1rem !important;
     padding-top: 1rem !important;
     border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-left: none !important;
+    border-right: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
     width: 100% !important;
     display: flex !important;
     align-items: center !important;
     gap: 0.75rem !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
   }
 
   .nav-menu .lang-nav-link {
