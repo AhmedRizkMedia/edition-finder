@@ -3883,7 +3883,7 @@ strong {
 
 
 /* ==========================================================================
-   MASTER UNIFIED NAVIGATION & RESPONSIVE SYSTEM (BODY-LEVEL DRAWER)
+   MASTER UNIFIED NAVIGATION & RESPONSIVE SYSTEM (PIXEL-PERFECT ALIGNMENT)
    ========================================================================== */
 
 /* Universal Box-Sizing & Viewport Boundary Lock */
@@ -3917,7 +3917,7 @@ main, section, footer, .container, .hero-container {
   width: 100% !important;
   height: var(--header-height, 70px) !important;
   z-index: 9999 !important;
-  background: rgba(255, 255, 255, 0.95) !important;
+  background: rgba(255, 255, 255, 0.96) !important;
   backdrop-filter: blur(12px) !important;
   -webkit-backdrop-filter: blur(12px) !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
@@ -3926,13 +3926,59 @@ main, section, footer, .container, .hero-container {
 }
 
 .header-container {
-  width: 90% !important;
-  max-width: 1200px !important;
+  width: 92% !important;
+  max-width: 1280px !important;
   margin: 0 auto !important;
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
   height: 100% !important;
+}
+
+/* Header Actions (Language Selector + CTA Button + Mobile Toggle) */
+.header-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1.25rem !important;
+}
+
+/* Language Selector Alignment Normalization */
+.lang-selector-nav {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+  line-height: 1 !important;
+  vertical-align: middle !important;
+}
+
+.lang-selector-nav .lang-nav-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+  color: #64748b !important;
+  text-decoration: none !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+  transition: all 0.2s ease !important;
+}
+
+.lang-selector-nav .lang-nav-link.active {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+  background-color: rgba(15, 23, 42, 0.06) !important;
+}
+
+.lang-selector-nav .lang-nav-divider {
+  display: inline-flex !important;
+  align-items: center !important;
+  line-height: 1 !important;
+  color: #cbd5e1 !important;
+  font-size: 0.75rem !important;
+  opacity: 0.6 !important;
+  margin: 0 1px !important;
 }
 
 /* Nav Overlay Backdrop */
@@ -3963,6 +4009,14 @@ main, section, footer, .container, .hero-container {
     display: none !important;
   }
 
+  .mobile-only-lang {
+    display: none !important;
+  }
+
+  .desktop-only-lang {
+    display: inline-flex !important;
+  }
+
   .nav-menu {
     position: fixed !important;
     top: 0 !important;
@@ -3976,7 +4030,7 @@ main, section, footer, .container, .hero-container {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
-    gap: 2.25rem !important;
+    gap: 2rem !important;
     padding: 0 !important;
     z-index: 10000 !important;
     right: auto !important;
@@ -3985,40 +4039,22 @@ main, section, footer, .container, .hero-container {
 
   .nav-menu a.nav-link {
     color: #475569 !important;
-    font-size: 0.9rem !important;
+    font-size: 0.875rem !important;
     font-weight: 500 !important;
     text-decoration: none !important;
     padding: 0 !important;
     border: none !important;
     background: transparent !important;
-    display: inline-block !important;
+    display: inline-flex !important;
+    align-items: center !important;
     transition: color 0.2s ease !important;
     margin: 0 !important;
+    white-space: nowrap !important;
+    line-height: 1 !important;
   }
 
   .nav-menu a.nav-link:hover {
     color: #0f172a !important;
-  }
-
-  .nav-menu .lang-selector-nav {
-    display: flex !important;
-    align-items: center !important;
-    gap: 0.4rem !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    border: none !important;
-  }
-
-  .nav-menu .lang-nav-link {
-    font-size: 0.85rem !important;
-    font-weight: 600 !important;
-    color: #64748b !important;
-    text-decoration: none !important;
-  }
-
-  .nav-menu .lang-nav-link.active {
-    color: #0f172a !important;
-    font-weight: 700 !important;
   }
 
   /* RTL Desktop Nav Centering */
@@ -4040,6 +4076,14 @@ main, section, footer, .container, .hero-container {
 
   .header-cta {
     display: none !important;
+  }
+
+  .desktop-only-lang {
+    display: none !important;
+  }
+
+  .mobile-only-lang {
+    display: flex !important;
   }
 
   /* Mobile Hamburger Button */
@@ -4147,6 +4191,7 @@ main, section, footer, .container, .hero-container {
   .nav-menu .lang-nav-link.active {
     color: #ffffff !important;
     text-decoration: underline !important;
+    background-color: transparent !important;
   }
 
   /* RTL Mobile Drawer Overrides */
