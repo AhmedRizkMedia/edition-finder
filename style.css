@@ -3883,7 +3883,7 @@ strong {
 
 
 /* ==========================================================================
-   MASTER UNIFIED NAVIGATION & RESPONSIVE SYSTEM (100% ACCESSIBLE)
+   MASTER UNIFIED NAVIGATION & RESPONSIVE SYSTEM (ARABIC BASELINE FIX)
    ========================================================================== */
 
 /* Universal Box-Sizing & Viewport Boundary Lock */
@@ -3909,7 +3909,7 @@ main, section, footer, .container, .hero-container {
   overflow: visible !important;
 }
 
-/* Header Navbar Styling */
+/* Apple Header Bar Styling */
 .header {
   position: fixed !important;
   top: 0 !important;
@@ -4017,7 +4017,7 @@ main, section, footer, .container, .hero-container {
     vertical-align: middle !important;
     margin-left: 0.75rem !important;
     padding-left: 0.75rem !important;
-    border-left: 1px solid rgba(0, 0, 0, 0.1) !important;
+    border-left: 1px solid rgba(0, 0, 0, 0.12) !important;
   }
 
   [dir="rtl"] .lang-selector-nav {
@@ -4026,7 +4026,8 @@ main, section, footer, .container, .hero-container {
     padding-left: 0 !important;
     padding-right: 0.75rem !important;
     border-left: none !important;
-    border-right: 1px solid rgba(0, 0, 0, 0.1) !important;
+    border-right: 1px solid rgba(0, 0, 0, 0.12) !important;
+    transform: translateY(1.5px) !important; /* Perfect baseline match for Alilato / Cairo fonts */
   }
 
   .lang-selector-nav .lang-nav-link {
@@ -4113,7 +4114,7 @@ main, section, footer, .container, .hero-container {
     transform: translateY(-8.5px) rotate(-45deg) !important;
   }
 
-  /* Mobile Menu Drawer */
+  /* Standalone Body-Level Mobile Menu Drawer */
   .nav-menu {
     position: fixed !important;
     top: 0 !important;
@@ -4171,6 +4172,7 @@ main, section, footer, .container, .hero-container {
     display: flex !important;
     align-items: center !important;
     gap: 0.75rem !important;
+    transform: none !important;
   }
 
   .nav-menu .lang-nav-link {
