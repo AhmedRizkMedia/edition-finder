@@ -207,11 +207,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if (spinner) spinner.style.display = 'inline-block';
 
-        // Submit form data to Netlify Forms asynchronously
+                // Submit form data to Netlify Forms asynchronously against master English schema
         try {
           const formData = new FormData(form);
-          const formSubmitUrl = window.location.pathname || '/';
-          fetch(formSubmitUrl, {
+          formData.set('form-name', 'consultation-form');
+
+          fetch('/', {
             method: 'POST',
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: new URLSearchParams(formData).toString()

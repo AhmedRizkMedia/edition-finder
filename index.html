@@ -66,6 +66,21 @@
   <!-- Mobile Menu Backdrop Overlay (Placed before header) -->
   <div class="nav-overlay" id="nav-overlay"></div>
 
+  <!-- Netlify Master English Form Schema Definition (Hidden) -->
+  <form name="consultation-form" data-netlify="true" netlify-honeypot="bot-field" hidden aria-hidden="true">
+    <input type="hidden" name="form-name" value="consultation-form" />
+    <label>Full Name <input type="text" name="Full Name" /></label>
+    <label>Company Name <input type="text" name="Company Name" /></label>
+    <label>Country Code <input type="text" name="Country Code" /></label>
+    <label>Phone Number <input type="text" name="Phone Number" /></label>
+    <label>Work Email <input type="email" name="Work Email" /></label>
+    <label>Need / Topic <input type="text" name="Need / Topic" /></label>
+    <label>Project Details <textarea name="Project Details"></textarea></label>
+    <label>Preferred Contact Method <input type="text" name="Preferred Contact Method" /></label>
+    <label>Best Time to Reach <input type="text" name="Best Time to Reach" /></label>
+    <label>Submission Language <input type="text" name="Submission Language" /></label>
+  </form>
+
   <!-- 1. Sticky Navigation Bar -->
   <header class="header">
     <div class="header-container">
@@ -654,8 +669,8 @@
               <p class="form-subtitle">Complete the fields below to schedule your free business consultation. Our team will review what you've shared and contact you within 24 hours to arrange your free consultation.</p>
             </div>
             
-            <form id="blueprint-form" class="blueprint-form" name="contact-form" data-netlify="true" novalidate>
-                <input type="hidden" name="form-name" value="contact-form">
+            <form id="blueprint-form" class="blueprint-form" name="consultation-form" data-netlify="true" novalidate>
+                <input type="hidden" name="form-name" value="consultation-form">
                 <input type="hidden" name="Submission Language" value="English">
               <div class="form-grid">
                 <!-- Full Name -->
@@ -861,6 +876,6 @@
   </footer>
 
   <!-- Javascript -->
-  <script src="app.js?v=11.0"></script>
+  <script src="app.js?v=12.0"></script>
 </body>
 </html>
