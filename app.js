@@ -210,7 +210,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Submit form data to Netlify Forms asynchronously
         try {
           const formData = new FormData(form);
-          fetch('/', {
+          const formSubmitUrl = window.location.pathname || '/';
+          fetch(formSubmitUrl, {
             method: 'POST',
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: new URLSearchParams(formData).toString()
