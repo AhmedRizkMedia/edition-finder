@@ -11,10 +11,10 @@
   <!-- Premium Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" onload="this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"></noscript>
   
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="../style.css?v=29.0">
+  <link rel="stylesheet" href="../style.css?v=30.0">
   <!-- Open Graph & Social Media Sharing Meta Tags -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://theeditionfinder.com/fr/contact.html">
@@ -125,7 +125,7 @@
                 <div class="form-group">
                   <label for="phone">Téléphone / WhatsApp <span class="required">*</span></label>
                   <div class="phone-input-container">
-                    <select id="countryCode" name="Country Code" class="country-code-select">
+                    <select id="countryCode" name="Country Code" class="country-code-select" aria-label="Country Code">
                       <option value="+971">🇦🇪 +971</option>
                       <option value="+966">🇸🇦 +966</option>
                       <option value="+965">🇰🇼 +965</option>
@@ -158,7 +158,7 @@
                 <!-- Dropdown: What brings you here? -->
                 <div class="form-group span-full">
                   <label for="bringsHere">Qu'est-ce qui vous amène ici ? <span class="required">*</span></label>
-                  <select id="bringsHere" name="Need / Topic" required>
+                  <select id="bringsHere" name="Need / Topic" aria-label="What brings you here" required>
                     <option value="" disabled selected>Sélectionnez une option...</option>
                     <option value="I'm starting a business">Je lance une entreprise</option>
                     <option value="I want more customers">Je veux plus de clients</option>
@@ -184,7 +184,7 @@
                 <!-- Preferred contact method (Optional) -->
                 <div class="form-group">
                   <label for="contactMethod">Méthode de contact préférée <span class="optional">(Optionnel)</span></label>
-                  <select id="contactMethod" name="Preferred Contact Method">
+                  <select id="contactMethod" name="Preferred Contact Method" aria-label="Preferred contact method">
                     <option value="" selected>Aucune préférence</option>
                     <option value="WhatsApp">WhatsApp</option>
                     <option value="Email">Email</option>
@@ -195,7 +195,7 @@
                 <!-- Best time to reach (Optional) -->
                 <div class="form-group">
                   <label for="bestTime">Quand vous joindre <span class="optional">(Optionnel)</span></label>
-                  <select id="bestTime" name="Best Time to Reach">
+                  <select id="bestTime" name="Best Time to Reach" aria-label="Best time to reach">
                     <option value="" selected>Aucune préférence</option>
                     <option value="Morning (9 AM - 12 PM)">Matin (9h - 12h)</option>
                     <option value="Afternoon (12 PM - 5 PM)">Après-midi (12h - 17h)</option>

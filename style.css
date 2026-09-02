@@ -4044,7 +4044,7 @@ main, section, footer, .container, .hero-container {
     font-size: 0.8rem !important;
     font-weight: 600 !important;
     line-height: 1 !important;
-    color: #64748b !important;
+    color: #475569 !important;
     text-decoration: none !important;
     padding: 3px 6px !important;
     border-radius: 4px !important;
@@ -4063,7 +4063,7 @@ main, section, footer, .container, .hero-container {
     display: inline-flex !important;
     align-items: center !important;
     line-height: 1 !important;
-    color: #cbd5e1 !important;
+    color: #475569 !important;
     font-size: 0.75rem !important;
     opacity: 0.6 !important;
     margin: 0 !important;
@@ -4205,7 +4205,7 @@ main, section, footer, .container, .hero-container {
   .nav-menu .lang-selector-nav .lang-nav-link {
     font-size: 1rem !important;
     font-weight: 600 !important;
-    color: #94a3b8 !important;
+    color: #334155 !important;
     opacity: 1 !important;
     text-decoration: none !important;
     background: transparent !important;

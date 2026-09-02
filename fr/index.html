@@ -11,10 +11,10 @@
   <!-- Premium Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" onload="this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"></noscript>
   
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="../style.css?v=29.0">
+  <link rel="stylesheet" href="../style.css?v=30.0">
   <!-- Open Graph & Social Media Sharing Meta Tags -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://theeditionfinder.com/fr/">
@@ -161,7 +161,7 @@
                   <!-- Left: Overall Business Score (Large Gauge) -->
                   <div class="dashboard-panel panel-overall">
                     <span class="panel-tag">Évaluation</span>
-                    <h4 class="panel-title">Score global</h4>
+                    <h4 class="panel-title">Score global</h3>
                     <div class="large-gauge-container">
                       <svg class="circular-chart large-gauge" viewBox="0 0 36 36">
                         <path class="circle-bg"
@@ -590,7 +590,7 @@
           <div class="consultation-split">
             <!-- Left Column: What to Expect -->
             <div class="consultation-info-col">
-              <h4 class="column-header">À quoi s'attendre :</h4>
+              <h4 class="column-header">À quoi s'attendre :</h3>
               <p class="consultation-text" style="font-family: var(--font-family-sans); font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 2rem;">
                 Nous explorerons où en est votre entreprise aujourd'hui, identifierons les défis auxquels vous êtes confrontés et vous aiderons à définir vos prochaines étapes.
               </p>
@@ -603,7 +603,7 @@
 
             <!-- Right Column: Maybe You Don't Need Us -->
             <div class="consultation-trust-col">
-              <h4 class="column-header">Peut-être que vous n'avez pas besoin de nous :</h4>
+              <h4 class="column-header">Peut-être que vous n'avez pas besoin de nous :</h3>
               <ul class="consultation-list checklist">
                 <li>Si quelque chose peut être résolu en interne, nous vous le dirons.</li>
                 <li>Si quelque chose peut attendre, nous vous le dirons.</li>
@@ -673,7 +673,7 @@
                 <div class="form-group">
                   <label for="phone">Téléphone / WhatsApp <span class="required">*</span></label>
                   <div class="phone-input-container">
-                    <select id="countryCode" name="Country Code" class="country-code-select">
+                    <select id="countryCode" name="Country Code" class="country-code-select" aria-label="Country Code">
                       <option value="+971">🇦🇪 +971</option>
                       <option value="+966">🇸🇦 +966</option>
                       <option value="+965">🇰🇼 +965</option>
@@ -706,7 +706,7 @@
                 <!-- Dropdown: What brings you here? -->
                 <div class="form-group span-full">
                   <label for="bringsHere">Qu'est-ce qui vous amène ici ? <span class="required">*</span></label>
-                  <select id="bringsHere" name="Need / Topic" required>
+                  <select id="bringsHere" name="Need / Topic" aria-label="What brings you here" required>
                     <option value="" disabled selected>Sélectionnez une option...</option>
                     <option value="I'm starting a business">Je lance une entreprise</option>
                     <option value="I want more customers">Je veux plus de clients</option>
@@ -732,7 +732,7 @@
                 <!-- Preferred contact method (Optional) -->
                 <div class="form-group">
                   <label for="contactMethod">Méthode de contact préférée <span class="optional">(Optionnel)</span></label>
-                  <select id="contactMethod" name="Preferred Contact Method">
+                  <select id="contactMethod" name="Preferred Contact Method" aria-label="Preferred contact method">
                     <option value="" selected>Aucune préférence</option>
                     <option value="WhatsApp">WhatsApp</option>
                     <option value="Email">Email</option>
@@ -743,7 +743,7 @@
                 <!-- Best time to reach (Optional) -->
                 <div class="form-group">
                   <label for="bestTime">Quand vous joindre <span class="optional">(Optionnel)</span></label>
-                  <select id="bestTime" name="Best Time to Reach">
+                  <select id="bestTime" name="Best Time to Reach" aria-label="Best time to reach">
                     <option value="" selected>Aucune préférence</option>
                     <option value="Morning (9 AM - 12 PM)">Matin (9h - 12h)</option>
                     <option value="Afternoon (12 PM - 5 PM)">Après-midi (12h - 17h)</option>

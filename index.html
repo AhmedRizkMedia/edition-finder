@@ -6,15 +6,14 @@
   <title>Edition Finder — Whatever Your Business Needs, Start Here</title>
   <meta name="description" content="Edition Finder is a business growth and solutions partner helping startups, SMEs, and established companies identify blockers, automate workflows, and build strategy.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://editionfinder.com/">
   
   <!-- Premium Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" onload="this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"></noscript>
   
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=29.0">
+  <link rel="stylesheet" href="style.css?v=30.0">
   <!-- Open Graph & Social Media Sharing Meta Tags -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://theeditionfinder.com/">
@@ -179,7 +178,7 @@
                   <!-- Left: Overall Business Score (Large Gauge) -->
                   <div class="dashboard-panel panel-overall">
                     <span class="panel-tag">Assessment</span>
-                    <h4 class="panel-title">Overall Score</h4>
+                    <h4 class="panel-title">Overall Score</h3>
                     <div class="large-gauge-container">
                       <svg class="circular-chart large-gauge" viewBox="0 0 36 36">
                         <path class="circle-bg"
@@ -608,7 +607,7 @@
           <div class="consultation-split">
             <!-- Left Column: What to Expect -->
             <div class="consultation-info-col">
-              <h4 class="column-header">What to expect:</h4>
+              <h4 class="column-header">What to expect:</h3>
               <p class="consultation-text" style="font-family: var(--font-family-sans); font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 2rem;">
                 We'll explore where your business stands today, identify what challenges you face, and help map out your next moves.
               </p>
@@ -621,7 +620,7 @@
 
             <!-- Right Column: Maybe You Don't Need Us -->
             <div class="consultation-trust-col">
-              <h4 class="column-header">Maybe You Don't Need Us:</h4>
+              <h4 class="column-header">Maybe You Don't Need Us:</h3>
               <ul class="consultation-list checklist">
                 <li>If something can be fixed internally, we'll tell you.</li>
                 <li>If something can wait, we'll tell you.</li>
@@ -691,7 +690,7 @@
                 <div class="form-group">
                   <label for="phone">Phone / WhatsApp <span class="required">*</span></label>
                   <div class="phone-input-container">
-                    <select id="countryCode" name="Country Code" class="country-code-select">
+                    <select id="countryCode" name="Country Code" class="country-code-select" aria-label="Country Code">
                       <option value="+971">🇦🇪 +971</option>
                       <option value="+966">🇸🇦 +966</option>
                       <option value="+965">🇰🇼 +965</option>
@@ -724,7 +723,7 @@
                 <!-- Dropdown: What brings you here? -->
                 <div class="form-group span-full">
                   <label for="bringsHere">What brings you here? <span class="required">*</span></label>
-                  <select id="bringsHere" name="Need / Topic" required>
+                  <select id="bringsHere" name="Need / Topic" aria-label="What brings you here" required>
                     <option value="" disabled selected>Select an option...</option>
                     <option value="I'm starting a business">I'm starting a business</option>
                     <option value="I want more customers">I want more customers</option>
@@ -750,7 +749,7 @@
                 <!-- Preferred contact method (Optional) -->
                 <div class="form-group">
                   <label for="contactMethod">Preferred contact method <span class="optional">(Optional)</span></label>
-                  <select id="contactMethod" name="Preferred Contact Method">
+                  <select id="contactMethod" name="Preferred Contact Method" aria-label="Preferred contact method">
                     <option value="" selected>No preference</option>
                     <option value="WhatsApp">WhatsApp</option>
                     <option value="Email">Email</option>
@@ -761,7 +760,7 @@
                 <!-- Best time to reach (Optional) -->
                 <div class="form-group">
                   <label for="bestTime">Best time to reach you <span class="optional">(Optional)</span></label>
-                  <select id="bestTime" name="Best Time to Reach">
+                  <select id="bestTime" name="Best Time to Reach" aria-label="Best time to reach">
                     <option value="" selected>No preference</option>
                     <option value="Morning (9 AM - 12 PM)">Morning (9 AM - 12 PM)</option>
                     <option value="Afternoon (12 PM - 5 PM)">Afternoon (12 PM - 5 PM)</option>

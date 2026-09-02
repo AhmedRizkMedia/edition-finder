@@ -11,12 +11,12 @@
   <!-- Premium Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" onload="this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"></noscript>
   <!-- Arabic Font fallback if needed, but keeping the requested ones -->
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" onload="this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap"></noscript>
   
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="../style.css?v=29.0">
+  <link rel="stylesheet" href="../style.css?v=30.0">
   <!-- Open Graph & Social Media Sharing Meta Tags -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://theeditionfinder.com/ar/">
@@ -163,7 +163,7 @@
                   <!-- Left: Overall Business Score (Large Gauge) -->
                   <div class="dashboard-panel panel-overall">
                     <span class="panel-tag">التقييم</span>
-                    <h4 class="panel-title">التقييم العام</h4>
+                    <h4 class="panel-title">التقييم العام</h3>
                     <div class="large-gauge-container">
                       <svg class="circular-chart large-gauge" viewBox="0 0 36 36">
                         <path class="circle-bg"
@@ -592,7 +592,7 @@
           <div class="consultation-split">
             <!-- Left Column: What to Expect -->
             <div class="consultation-info-col">
-              <h4 class="column-header">ماذا تتوقع:</h4>
+              <h4 class="column-header">ماذا تتوقع:</h3>
               <p class="consultation-text" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 2rem;">
                 سنستكشف أين يقف عملك اليوم، ونحدد التحديات التي تواجهها، ونساعد في رسم تحركاتك القادمة.
               </p>
@@ -605,7 +605,7 @@
 
             <!-- Right Column: Maybe You Don't Need Us -->
             <div class="consultation-trust-col">
-              <h4 class="column-header">ربما لا تحتاجنا:</h4>
+              <h4 class="column-header">ربما لا تحتاجنا:</h3>
               <ul class="consultation-list checklist">
                 <li>إذا كان يمكن إصلاح شيء داخلياً، فسنخبرك.</li>
                 <li>إذا كان هناك شيء يمكن أن ينتظر، فسنخبرك.</li>
@@ -660,7 +660,7 @@
                 <div class="form-group">
                   <label for="phone">الهاتف / واتساب <span class="required">*</span></label>
                   <div class="phone-input-container">
-                    <select id="countryCode" name="Country Code" class="country-code-select">
+                    <select id="countryCode" name="Country Code" class="country-code-select" aria-label="Country Code">
                       <option value="+971">🇦🇪 +971</option>
                       <option value="+966">🇸🇦 +966</option>
                       <option value="+965">🇰🇼 +965</option>
@@ -693,7 +693,7 @@
                 <!-- Dropdown: What brings you here? -->
                 <div class="form-group span-full">
                   <label for="bringsHere">ما الذي يجمعنا هنا؟ <span class="required">*</span></label>
-                  <select id="bringsHere" name="Need / Topic" required>
+                  <select id="bringsHere" name="Need / Topic" aria-label="What brings you here" required>
                     <option value="" disabled selected>اختر خياراً...</option>
                     <option value="I'm starting a business">أنا أبدأ عملاً جديداً</option>
                     <option value="I want more customers">أريد المزيد من العملاء</option>
@@ -719,7 +719,7 @@
                 <!-- Preferred contact method (Optional) -->
                 <div class="form-group">
                   <label for="contactMethod">طريقة التواصل المفضلة <span class="optional">(اختياري)</span></label>
-                  <select id="contactMethod" name="Preferred Contact Method">
+                  <select id="contactMethod" name="Preferred Contact Method" aria-label="Preferred contact method">
                     <option value="" selected>بدون تفضيل</option>
                     <option value="WhatsApp">واتساب</option>
                     <option value="Email">البريد الإلكتروني</option>
@@ -730,7 +730,7 @@
                 <!-- Best time to reach (Optional) -->
                 <div class="form-group">
                   <label for="bestTime">أفضل وقت للوصول إليك <span class="optional">(اختياري)</span></label>
-                  <select id="bestTime" name="Best Time to Reach">
+                  <select id="bestTime" name="Best Time to Reach" aria-label="Best time to reach">
                     <option value="" selected>بدون تفضيل</option>
                     <option value="Morning (9 AM - 12 PM)">الصباح (٩ ص - ١٢ م)</option>
                     <option value="Afternoon (12 PM - 5 PM)">بعد الظهر (١٢ م - ٥ م)</option>
