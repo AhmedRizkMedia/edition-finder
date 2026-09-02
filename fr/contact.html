@@ -105,18 +105,19 @@
           <div class="form-state-active" id="form-state-active">
             <form id="blueprint-form" class="blueprint-form" name="consultation-form" data-netlify="true" novalidate>
                 <input type="hidden" name="form-name" value="consultation-form">
+                <input type="hidden" name="Submission Language" value="French">
               <div class="form-grid">
                 <!-- Full Name -->
                 <div class="form-group">
                   <label for="fullName">Nom complet <span class="required">*</span></label>
-                  <input type="text" id="fullName" name="fullName" placeholder="Sophie Dubois" required>
+                  <input type="text" id="fullName" name="Full Name" placeholder="Sophie Dubois" required>
                   <span class="error-msg" id="err-fullName">Veuillez entrer votre nom.</span>
                 </div>
 
                 <!-- Company Name -->
                 <div class="form-group">
                   <label for="companyName">Nom de l'entreprise / société <span class="required">*</span></label>
-                  <input type="text" id="companyName" name="companyName" placeholder="Edition Finder Inc." required>
+                  <input type="text" id="companyName" name="Company Name" placeholder="Edition Finder Inc." required>
                   <span class="error-msg" id="err-companyName">Veuillez entrer le nom de votre entreprise.</span>
                 </div>
 
@@ -124,7 +125,7 @@
                 <div class="form-group">
                   <label for="phone">Téléphone / WhatsApp <span class="required">*</span></label>
                   <div class="phone-input-container">
-                    <select id="countryCode" name="countryCode" class="country-code-select">
+                    <select id="countryCode" name="Country Code" class="country-code-select">
                       <option value="+971">🇦🇪 +971</option>
                       <option value="+966">🇸🇦 +966</option>
                       <option value="+965">🇰🇼 +965</option>
@@ -142,7 +143,7 @@
                       <option value="+213">🇩🇿 +213</option>
                       <option value="+216">🇹🇳 +216</option>
                     </select>
-                    <input type="tel" id="phone" name="phone" placeholder="50 123 4567" required>
+                    <input type="tel" id="phone" name="Phone Number" placeholder="50 123 4567" required>
                   </div>
                   <span class="error-msg" id="err-phone">Veuillez entrer votre numéro de téléphone ou WhatsApp.</span>
                 </div>
@@ -150,14 +151,14 @@
                 <!-- Business Email -->
                 <div class="form-group">
                   <label for="email">E-mail professionnel <span class="required">*</span></label>
-                  <input type="email" id="email" name="email" placeholder="hello@yourbusiness.com" required>
+                  <input type="email" id="email" name="Work Email" placeholder="hello@yourbusiness.com" required>
                   <span class="error-msg" id="err-email">Veuillez entrer un e-mail professionnel valide.</span>
                 </div>
 
                 <!-- Dropdown: What brings you here? -->
                 <div class="form-group span-full">
                   <label for="bringsHere">Qu'est-ce qui vous amène ici ? <span class="required">*</span></label>
-                  <select id="bringsHere" name="bringsHere" required>
+                  <select id="bringsHere" name="Need / Topic" required>
                     <option value="" disabled selected>Sélectionnez une option...</option>
                     <option value="I'm starting a business">Je lance une entreprise</option>
                     <option value="I want more customers">Je veux plus de clients</option>
@@ -176,14 +177,14 @@
                 <!-- Describe what's on mind -->
                 <div class="form-group span-full">
                   <label for="businessDescription">Dites-nous ce que vous avez en tête <span class="required">*</span></label>
-                  <textarea id="businessDescription" name="businessDescription" rows="4" placeholder="Décrivez brièvement votre situation actuelle, les défis de votre entreprise ou ce que vous aimeriez accomplir." required></textarea>
+                  <textarea id="businessDescription" name="Project Details" rows="4" placeholder="Décrivez brièvement votre situation actuelle, les défis de votre entreprise ou ce que vous aimeriez accomplir." required></textarea>
                   <span class="error-msg" id="err-businessDescription">Veuillez indiquer ce que vous avez en tête.</span>
                 </div>
 
                 <!-- Preferred contact method (Optional) -->
                 <div class="form-group">
                   <label for="contactMethod">Méthode de contact préférée <span class="optional">(Optionnel)</span></label>
-                  <select id="contactMethod" name="contactMethod">
+                  <select id="contactMethod" name="Preferred Contact Method">
                     <option value="" selected>Aucune préférence</option>
                     <option value="WhatsApp">WhatsApp</option>
                     <option value="Email">Email</option>
@@ -194,7 +195,7 @@
                 <!-- Best time to reach (Optional) -->
                 <div class="form-group">
                   <label for="bestTime">Quand vous joindre <span class="optional">(Optionnel)</span></label>
-                  <select id="bestTime" name="bestTime">
+                  <select id="bestTime" name="Best Time to Reach">
                     <option value="" selected>Aucune préférence</option>
                     <option value="Morning (9 AM - 12 PM)">Matin (9h - 12h)</option>
                     <option value="Afternoon (12 PM - 5 PM)">Après-midi (12h - 17h)</option>
@@ -293,6 +294,6 @@
   </footer>
 
   <!-- Javascript -->
-  <script src="../app.js?v=9.0"></script>
+  <script src="../app.js?v=10.0"></script>
 </body>
 </html>

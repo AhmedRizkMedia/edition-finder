@@ -640,18 +640,19 @@
             
             <form id="blueprint-form" class="blueprint-form" name="consultation-form" data-netlify="true" novalidate>
                 <input type="hidden" name="form-name" value="consultation-form">
+                <input type="hidden" name="Submission Language" value="Arabic">
               <div class="form-grid">
                 <!-- Full Name -->
                 <div class="form-group">
                   <label for="fullName">الاسم الكامل <span class="required">*</span></label>
-                  <input type="text" id="fullName" name="fullName" placeholder="سارة العتيبي" required>
+                  <input type="text" id="fullName" name="Full Name" placeholder="سارة العتيبي" required>
                   <span class="error-msg" id="err-fullName">يرجى إدخال اسمك.</span>
                 </div>
 
                 <!-- Company Name -->
                 <div class="form-group">
                   <label for="companyName">اسم الشركة / النشاط التجاري <span class="required">*</span></label>
-                  <input type="text" id="companyName" name="companyName" placeholder="إديشن فايندر ذ.م.م" required>
+                  <input type="text" id="companyName" name="Company Name" placeholder="إديشن فايندر ذ.م.م" required>
                   <span class="error-msg" id="err-companyName">يرجى إدخال اسم شركتك.</span>
                 </div>
 
@@ -659,7 +660,7 @@
                 <div class="form-group">
                   <label for="phone">الهاتف / واتساب <span class="required">*</span></label>
                   <div class="phone-input-container">
-                    <select id="countryCode" name="countryCode" class="country-code-select">
+                    <select id="countryCode" name="Country Code" class="country-code-select">
                       <option value="+971">🇦🇪 +971</option>
                       <option value="+966">🇸🇦 +966</option>
                       <option value="+965">🇰🇼 +965</option>
@@ -677,7 +678,7 @@
                       <option value="+213">🇩🇿 +213</option>
                       <option value="+216">🇹🇳 +216</option>
                     </select>
-                    <input type="tel" id="phone" name="phone" placeholder="50 123 4567" required>
+                    <input type="tel" id="phone" name="Phone Number" placeholder="50 123 4567" required>
                   </div>
                   <span class="error-msg" id="err-phone">يرجى إدخال رقم هاتفك أو واتساب.</span>
                 </div>
@@ -685,14 +686,14 @@
                 <!-- Business Email -->
                 <div class="form-group">
                   <label for="email">البريد الإلكتروني للعمل <span class="required">*</span></label>
-                  <input type="email" id="email" name="email" placeholder="hello@yourbusiness.com" required>
+                  <input type="email" id="email" name="Work Email" placeholder="hello@yourbusiness.com" required>
                   <span class="error-msg" id="err-email">يرجى إدخال بريد إلكتروني صالح.</span>
                 </div>
 
                 <!-- Dropdown: What brings you here? -->
                 <div class="form-group span-full">
                   <label for="bringsHere">ما الذي يجمعنا هنا؟ <span class="required">*</span></label>
-                  <select id="bringsHere" name="bringsHere" required>
+                  <select id="bringsHere" name="Need / Topic" required>
                     <option value="" disabled selected>اختر خياراً...</option>
                     <option value="I'm starting a business">أنا أبدأ عملاً جديداً</option>
                     <option value="I want more customers">أريد المزيد من العملاء</option>
@@ -711,14 +712,14 @@
                 <!-- Describe what's on mind -->
                 <div class="form-group span-full">
                   <label for="businessDescription">أخبرنا بما يدور في ذهنك <span class="required">*</span></label>
-                  <textarea id="businessDescription" name="businessDescription" rows="4" placeholder="صف بإيجاز وضعك الحالي، أو تحديات العمل، أو ما ترغب في تحقيقه." required></textarea>
+                  <textarea id="businessDescription" name="Project Details" rows="4" placeholder="صف بإيجاز وضعك الحالي، أو تحديات العمل، أو ما ترغب في تحقيقه." required></textarea>
                   <span class="error-msg" id="err-businessDescription">يرجى إدخال ما يدور في ذهنك.</span>
                 </div>
 
                 <!-- Preferred contact method (Optional) -->
                 <div class="form-group">
                   <label for="contactMethod">طريقة التواصل المفضلة <span class="optional">(اختياري)</span></label>
-                  <select id="contactMethod" name="contactMethod">
+                  <select id="contactMethod" name="Preferred Contact Method">
                     <option value="" selected>بدون تفضيل</option>
                     <option value="WhatsApp">واتساب</option>
                     <option value="Email">البريد الإلكتروني</option>
@@ -729,7 +730,7 @@
                 <!-- Best time to reach (Optional) -->
                 <div class="form-group">
                   <label for="bestTime">أفضل وقت للوصول إليك <span class="optional">(اختياري)</span></label>
-                  <select id="bestTime" name="bestTime">
+                  <select id="bestTime" name="Best Time to Reach">
                     <option value="" selected>بدون تفضيل</option>
                     <option value="Morning (9 AM - 12 PM)">الصباح (٩ ص - ١٢ م)</option>
                     <option value="Afternoon (12 PM - 5 PM)">بعد الظهر (١٢ م - ٥ م)</option>
@@ -844,6 +845,6 @@
   </footer>
 
   <!-- Javascript -->
-  <script src="../app.js?v=9.0"></script>
+  <script src="../app.js?v=10.0"></script>
 </body>
 </html>
